@@ -1,0 +1,17 @@
+header.navbar.navbar-light.bg-light
+  = link_to root_path, class: 'navbar-brand' do
+    span.m-r-md= ion_icon :beer
+    = app_title
+  ul.nav.justify-content-center
+    - if logged_in?
+      li.nav-item.dropdown
+        a id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class='nav-link dropdown-toggle' role='button' href='#'
+          span.m-r-sm= ion_icon :person
+          = current_user.email
+        .dropdown-menu aria-labelledby="navbarDropdown"
+          = link_to 'Профиль', profile_path, class: 'dropdown-item'
+          .dropdown-divider
+          = link_to 'Выйти', logout_path, method: :delete, class: 'dropdown-item'
+    - else
+      = active_link_to 'Зарегистрироваться', signup_path, wrap_tag: :li, class: 'nav-link', wrap_class: 'nav-item'
+      = active_link_to 'Войти', login_path, wrap_tag: :li, class: 'nav-link', wrap_class: 'nav-item'

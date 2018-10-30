@@ -1,0 +1,6 @@
+ru:
+  flashes:
+    wrong_password: Неверный пароль
+    welcome: Добро пожаловать!
+    registered: Добро пожаловать, %{email}!
+    goodbye: Пока!

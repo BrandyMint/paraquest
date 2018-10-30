@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= app_title
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render 'header'
+    .container
+      .row
+        .col-md-4.offset-md-4 = yield
+    = render 'flashes'

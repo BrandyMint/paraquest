@@ -1,0 +1,8 @@
+ru:
+  helpers:
+    submit:
+      user:
+        create: 'Зарегистрироваться'
+
+      user_session:
+        create: 'Войти'

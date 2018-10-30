@@ -1,0 +1,15 @@
+table.table.table-condensed.table-narrow
+  thead
+    tr
+      th Продавец
+      th Метод оплаты
+      th Цена
+      th Лимиты
+      th
+  tbody
+    - offers.each do |offer|
+      tr
+        td= offer.user
+        td= offer.payment_method
+        td= humanized_money_with_symbol offer.rate
+        td= offer.limits

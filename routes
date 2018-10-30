@@ -1,0 +1,24 @@
+              Prefix Verb   URI Pattern                         Controller#Action
+       profiles_edit GET    /profiles/edit(.:format)            profiles#edit
+     profiles_update GET    /profiles/update(.:format)          profiles#update
+       profiles_show GET    /profiles/show(.:format)            profiles#show
+   user_sessions_new GET    /user_sessions/new(.:format)        user_sessions#new
+user_sessions_create GET    /user_sessions/create(.:format)     user_sessions#create
+               login GET    /login(.:format)                    user_sessions#new
+              logout DELETE /logout(.:format)                   user_sessions#destroy
+       user_sessions POST   /user_sessions(.:format)            user_sessions#create
+    new_user_session GET    /user_sessions/new(.:format)        user_sessions#new
+        user_session DELETE /user_sessions/:id(.:format)        user_sessions#destroy
+              signup GET    /signup(.:format)                   users#new
+        edit_profile GET    /profile/edit(.:format)             profiles#edit
+             profile GET    /profile(.:format)                  profiles#show
+                     PATCH  /profile(.:format)                  profiles#update
+                     PUT    /profile(.:format)                  profiles#update
+       activate_user GET    /users/:id/activate(.:format)       users#activate
+               users POST   /users(.:format)                    users#create
+     password_resets POST   /password_resets(.:format)          password_resets#create
+  new_password_reset GET    /password_resets/new(.:format)      password_resets#new
+ edit_password_reset GET    /password_resets/:id/edit(.:format) password_resets#edit
+      password_reset PATCH  /password_resets/:id(.:format)      password_resets#update
+                     PUT    /password_resets/:id(.:format)      password_resets#update
+                root GET    /                                   dashboard#index

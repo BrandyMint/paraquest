@@ -1,0 +1,239 @@
+---
+rub:
+  priority: 1
+  iso_code: RUB
+  name: Russian Ruble
+  symbol: "₽"
+  alternate_symbols:
+  - руб.
+  - р.
+  subunit: Kopeck
+  subunit_to_unit: 100
+  symbol_first: false
+  html_entity: "&#x20BD;"
+  decimal_mark: ","
+  thousands_separator: "."
+  iso_numeric: '643'
+  smallest_denomination: 1
+  is_crypto: false
+
+usd:
+  priority: 2
+  iso_code: USD
+  name: Американский Доллар
+  symbol: "$"
+  disambiguate_symbol: US$
+  alternate_symbols:
+  - US$
+  subunit: Cent
+  subunit_to_unit: 100
+  symbol_first: true
+  html_entity: "$"
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: '840'
+  smallest_denomination: 1
+  is_crypto: false
+btc:
+  priority: 3
+  iso_code: BTC
+  name: Bitcoin
+  symbol: B⃦
+  alternate_symbols: []
+  subunit: Satoshi
+  subunit_to_unit: 100000000
+  symbol_first: false
+  html_entity: "&#x20bf;"
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  is_crypto: true
+ltc:
+  priority: 4
+  iso_code: LTC
+  name: Litecoin
+  symbol: Ł
+  alternate_symbols: []
+  subunit: litoshis
+  # Source: https://en.wikipedia.org/wiki/Litecoin
+  subunit_to_unit: 100000000
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  is_crypto: true
+  authorized_round: 5
+eth:
+  priority: 5
+  iso_code: ETH
+  name: Ethereum
+  symbol: Ξ
+  alternate_symbols: []
+  subunit: Gwei
+  # может быть 10−18 степени, но мы останавливаемся на Gwey
+  # https://en.wikipedia.org/wiki/Ethereum
+  subunit_to_unit: 1000000000
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  authorized_round: 6
+  is_crypto: true
+# Darkcoin Dash was originally released as XCoin (XCO
+dsh:
+  priority: 6
+  iso_code: DSH
+  name: Dash
+  symbol: 
+  alternate_symbols: []
+  subunit:
+  # Как у BTC, потому что это форл BTC
+  subunit_to_unit: 100000000
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  authorized_round: 6
+  is_crypto: true
+
+kzt:
+  priority: 7
+  iso_code: KZT
+  name: Казахстанский Тэнге
+  symbol: "₸"
+  alternate_symbols: []
+  subunit: Tiyn
+  subunit_to_unit: 100
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: '398'
+  is_crypto: false
+  smallest_denomination: 1
+
+xrp:
+  priority: 8
+  iso_code: XRP
+  name: Ripple
+  symbol:
+  alternate_symbols: []
+  subunit: drop
+  # 1/миллионная- https://en.wikipedia.org/wiki/Ripple_(payment_protocol)
+  subunit_to_unit: 1000000
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  authorized_round: 6
+  is_crypto: true
+
+etc:
+  priority: 9
+  iso_code: ETC
+  name: Ethereum Classic 
+  symbol:
+  alternate_symbols: []
+  subunit:
+  # Как у Эфира, потому что это форк эфира
+  subunit_to_unit: 1000000000
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  authorized_round: 6
+  is_crypto: true
+
+xmr:
+  priority: 10
+  iso_code: XMR
+  name: Monero
+  symbol: ɱ
+  alternate_symbols: []
+  subunit: piconero
+  subunit_to_unit: 1000000000000
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  authorized_round: 6
+  is_crypto: true
+
+bch:
+  priority: 11
+  iso_code: BCH
+  name: Bitcoin Cash
+  symbol:
+  alternate_symbols: []
+  subunit:
+  # Как биткойн, потому что это форк
+  subunit_to_unit: 100000000
+  symbol_first: false
+  html_entity: ''
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  authorized_round: 8
+  is_crypto: true
+
+eur:
+  priority: 12
+  iso_code: EUR
+  name: Euro
+  symbol: €
+  alternate_symbols: []
+  subunit: Cent
+  subunit_to_unit: 100
+  symbol_first: true
+  html_entity: "$"
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: '978'
+  smallest_denomination: 1
+  is_crypto: false
+
+neo:
+  priority: 13
+  iso_code: NEO
+  name: Neo
+  symbol: N
+  alternate_symbols: []
+  subunit: Neo
+  subunit_to_unit: 1
+  symbol_first: true
+  html_entity: "$"
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  is_crypto: true
+
+zec:
+  priority: 14
+  iso_code: ZEC
+  name: Zcash
+  symbol: Z
+  alternate_symbols: []
+  subunit: Zcash Cent
+  subunit_to_unit: 100000000
+  symbol_first: true
+  html_entity: "$"
+  decimal_mark: "."
+  thousands_separator: ","
+  iso_numeric: ''
+  smallest_denomination: 1
+  is_crypto: true

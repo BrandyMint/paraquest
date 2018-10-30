@@ -1,0 +1,1 @@
+Rails.application.config.action_mailer.default_url_options = Settings.default_url_options.symbolize_keys

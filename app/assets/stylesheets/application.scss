@@ -1,0 +1,15 @@
+/*
+ *= require_tree .
+ *= require noty
+ *= require nprogress
+ *= require nprogress-bootstrap
+ *= require nprogress-turbolinks5
+ *= require_self
+ */
+
+@import "bootstrap";
+@import 'ionicons';
+
+.table-narrow {
+  width: auto;
+}
