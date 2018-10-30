@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_110544) do
+ActiveRecord::Schema.define(version: 2018_10_30_124125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "slide_id", null: false
+    t.integer "coordinate_x", null: false
+    t.integer "coordinate_y", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slide_id"], name: "index_games_on_slide_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
 
   create_table "slides", force: :cascade do |t|
     t.string "image", null: false
@@ -55,4 +66,6 @@ ActiveRecord::Schema.define(version: 2018_10_30_110544) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token"
   end
 
+  add_foreign_key "games", "slides"
+  add_foreign_key "games", "users"
 end

@@ -20,3 +20,16 @@
 //= require nprogress-ajax
 //= require flash
 //= require_tree .
+
+
+// ругой ример https://codepen.io/tamm/pen/LIFam
+$(document).ready(function() {
+  $("[data-game=image]").on("click", function(event) {
+    var x = event.pageX - this.offsetLeft;
+    var y = event.pageY - this.offsetTop;
+    alert("X Coordinate: " + x + " Y Coordinate: " + y);
+    $('[data-game=form] input#game_coordinate_x').val(x);
+    $('[data-game=form] input#game_coordinate_y').val(y);
+    $('[data-game=form]').submit()
+  });
+});

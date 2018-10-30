@@ -1,0 +1,10 @@
+h1 Ваши тесты
+
+table.table.table-condensed.table-narrow
+  - games.each do |game|
+    tr
+      td= game.id
+      td= l game.created_at
+      td= game.slide.title
+      td= game.coordinate
+

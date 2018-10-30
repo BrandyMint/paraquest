@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   authenticates_with_sorcery!
 
-  has_many :offers
+  has_many :games
 
   scope :ordered, -> { order :id }
 

@@ -1,0 +1,5 @@
+h1 Слайды (#{slides.total_count})
+
+- slides.each do |slide|
+  = render 'figure', slide: slide
+= paginate slides

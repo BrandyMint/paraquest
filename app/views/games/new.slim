@@ -1,0 +1,14 @@
+= link_to '&larr; назад в игры'.html_safe, slides_path
+hr
+
+-# https://codepen.io/tamm/pen/LIFam
+
+h1 Играем (#{game.slide.title})
+
+= form_for game, data: { game: :form } do |f|
+  = f.hidden_field :slide_id
+  = f.hidden_field :coordinate_x
+  = f.hidden_field :coordinate_y
+
+= image_tag game.slide.image.url, class: 'crosshair game-image', data: { game: :image }
+hr

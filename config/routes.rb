@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user_games/index'
   get 'login' => 'user_sessions#new', as: :login
   delete 'logout' => 'user_sessions#destroy', as: :logout
   resources :user_sessions, only: %i[new create destroy]
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :password_resets, only: %i[new create edit update]
+  resources :slides, only: [:index]
+  resources :games
+
+  resources :user_games, only: [:index]
 
   root to: 'dashboard#index'
 
