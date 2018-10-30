@@ -1,0 +1,7 @@
+= simple_form_for([:admin, slide]) do |f|
+  .row
+    .col-md-6
+      = f.input :image
+      = f.input :title
+  hr
+  = f.button :submit, 'Сохранить', class: 'btn btn-success'

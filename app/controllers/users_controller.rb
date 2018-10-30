@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create permitted_params
+    user = User.create! permitted_params
 
     flash.notice = t_flash(:registered, email: user.email)
 
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   private
 
   def permitted_params
-    params.fetch(:user, {}).permit :email, :password, :password_confirmation
+    params.fetch(:user, {}).permit :email, :password, :password_confirmation, :nick
   end
 end

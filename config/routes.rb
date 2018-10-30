@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'offers/index'
-  get 'profiles/edit'
-  get 'profiles/update'
-  get 'profiles/show'
-  get 'user_sessions/new'
-  get 'user_sessions/create'
   get 'login' => 'user_sessions#new', as: :login
   delete 'logout' => 'user_sessions#destroy', as: :logout
   resources :user_sessions, only: %i[new create destroy]
@@ -22,5 +15,9 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
 
   root to: 'dashboard#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :admin do
+    resources :users
+    resources :slides
+  end
 end

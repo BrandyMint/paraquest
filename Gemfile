@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.4'
+ruby '2.4.5'
 
 source 'https://rails-assets.org' do
   # На случай есил в rail-assets снова отвалится https используем опасный вариант
@@ -13,6 +13,9 @@ gem 'cocoon'
 gem 'valid_email'# , require: 'valid_email/validate_email'
 gem 'date_validator'
 gem 'auto_strip_attributes'
+
+gem 'mini_magick'
+gem 'carrierwave'
 
 gem 'nilify_blanks'
 gem "hiredis", "~> 0.6.0"
@@ -75,7 +78,7 @@ gem 'dapi-archivable', '~> 0.1.2', require: 'archivable'
 gem 'semver2'
 gem 'active_link_to', github: 'BrandyMint/active_link_to'
 gem 'bugsnag'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.2'
 gem 'breadcrumbs_on_rails'
 gem 'phone', github: 'BrandyMint/phone', branch: 'feature/russia'
 

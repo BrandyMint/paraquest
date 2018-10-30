@@ -126,7 +126,7 @@ GEM
       logger
     auto_strip_attributes (2.5.0)
       activerecord (>= 4.0)
-    autoprefixer-rails (9.1.4)
+    autoprefixer-rails (9.3.1)
       execjs
     awesome_print (1.8.0)
     axiom-types (0.1.1)
@@ -143,7 +143,7 @@ GEM
     bindex (0.5.0)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
-    bootstrap (4.0.0)
+    bootstrap (4.1.3)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
@@ -162,6 +162,10 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.1)
+    carrierwave (1.2.3)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (2.1.0)
@@ -301,7 +305,11 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2018.0812)
     mimemagic (0.3.2)
+    mini_magick (4.9.2)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     mini_racer (0.2.3)
@@ -535,12 +543,13 @@ DEPENDENCIES
   auto_strip_attributes
   best_in_place
   bootsnap (>= 1.1.0)
-  bootstrap (~> 4.0.0)
+  bootstrap (~> 4.1.2)
   bootstrap-kaminari-views
   breadcrumbs_on_rails
   bugsnag
   byebug
   capybara (>= 2.15)
+  carrierwave
   chromedriver-helper
   cocoon
   coffee-rails (~> 4.2)
@@ -567,6 +576,7 @@ DEPENDENCIES
   kaminari
   kaminari-i18n
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   mini_racer
   money
   money-rails (~> 1.12)
@@ -616,7 +626,7 @@ DEPENDENCIES
   workflow!
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.4.5p335
 
 BUNDLED WITH
-   1.16.6
+   1.17.0

@@ -1,7 +1,7 @@
 module ApplicationHelper
   def app_title
-    # 'Domestic bitcoin exchange markets'
-    'domestic'
+    # 'Paraquest bitcoin exchange markets'
+    'paraquest'
   end
 
   def ion_icon(icon, text: nil)

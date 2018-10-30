@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_115034) do
+ActiveRecord::Schema.define(version: 2018_10_30_110544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "offers", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "in_amount_cents", default: 0, null: false
-    t.string "in_amount_currency", default: "USD", null: false
-    t.integer "out_amount_cents", default: 0, null: false
-    t.string "out_amount_currency", default: "USD", null: false
-    t.datetime "archived_at"
-    t.text "details"
+  create_table "slides", force: :cascade do |t|
+    t.string "image", null: false
+    t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_115034) do
     t.datetime "last_activity_at"
     t.string "last_login_from_ip_address"
     t.string "nick", null: false
+    t.string "role", default: "user", null: false
     t.index ["activation_token"], name: "index_users_on_activation_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["last_logout_at", "last_activity_at"], name: "index_users_on_last_logout_at_and_last_activity_at"
@@ -60,5 +55,4 @@ ActiveRecord::Schema.define(version: 2018_10_16_115034) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token"
   end
 
-  add_foreign_key "offers", "users"
 end

@@ -1,0 +1,16 @@
+h1 Зарегистрированные пользователи (#{users.total_count})
+
+table.table.table-condensed.table-narrow
+  thead
+    tr
+      th Псевдоним
+      th email
+      th Роль
+  tbody
+    - users.each do |user|
+      tr
+        td= user.nick
+        td= user.email
+        td= user.role
+
+= paginate users

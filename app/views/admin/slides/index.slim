@@ -1,0 +1,15 @@
+.float-right= link_to 'Новый слайд', new_admin_slide_path, class: 'btn btn-success'
+
+h1 Слайды (#{slides.total_count})
+
+table.table.table-condensed.table-narrow
+  tbody
+    - slides.each do |slide|
+      tr
+        td= slide.id
+        td
+          = link_to slide.image.url do
+            = image_tag slide.image.thumb.url
+        td= slide.title
+
+= paginate slides
