@@ -25,8 +25,6 @@ require 'capistrano/maintenance'
 require 'capistrano/shell'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
-install_plugin Capistrano::Puma::Workers
-install_plugin Capistrano::Puma::Nginx
 require 'capistrano/rails/assets'
 require 'capistrano/faster_assets'
 require 'capistrano/rails/migrations'
