@@ -23,13 +23,15 @@
 
 
 // ругой ример https://codepen.io/tamm/pen/LIFam
-$(document).ready(function() {
-  $("[data-game=image]").on("click", function(event) {
+
+document.addEventListener("turbolinks:load", function() {
+  $('[data-game="image"]').on("click", function(event) {
+    console.log('click');
     var x = event.pageX - this.offsetLeft;
     var y = event.pageY - this.offsetTop;
     alert("X Coordinate: " + x + " Y Coordinate: " + y);
-    $('[data-game=form] input#game_coordinate_x').val(x);
-    $('[data-game=form] input#game_coordinate_y').val(y);
-    $('[data-game=form]').submit()
+    $('[data-game="form"] input#game_coordinate_x').val(x);
+    $('[data-game="form"] input#game_coordinate_y').val(y);
+    $('[data-game="form"]').submit()
   });
 });
