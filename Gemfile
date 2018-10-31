@@ -128,6 +128,25 @@ group :development, :test do
   gem 'guard-bundler'
   gem 'guard-ctags-bundler'
   gem 'rspec-rails'
+
+  gem 'bugsnag-capistrano', require: false
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-db-tasks', require: false
+  gem 'capistrano-faster-assets', require: false
+  gem 'capistrano-git-with-submodules', '~> 2.0'
+  gem 'capistrano-maintenance', require: false
+  gem 'capistrano-master-key', github: 'virgoproz/capistrano-master-key', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rails-console', require: false
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano-secrets-yml', require: false
+  gem 'capistrano-semver-git-tags', require: false
+  gem 'capistrano-shell', require: false
+  gem 'capistrano-tasks', github: 'alfagen/capistrano-tasks', require: false
+  gem 'capistrano-upload-config', require: false
+  gem 'capistrano3-puma', github: 'seuros/capistrano-puma', require: false
+
 end
 
 group :development do

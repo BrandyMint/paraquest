@@ -2,6 +2,7 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light
   = link_to root_path, class: 'navbar-brand' do
     span.m-r-md= ion_icon :jet
     = app_title
+    span.m-l-xs= AppVersion.to_s
   .collapse.navbar-collapse#navbarSupportedContent
     ul.navbar-nav.mr-auto
       = active_link_to 'Слайды', slides_path, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
