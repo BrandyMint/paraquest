@@ -1,4 +1,5 @@
 figure.figure
-  = image_tag slide.image.thumb.url, class: 'figure-img img-fluid rounded'
+  = link_to slide_path(slide) do
+    = image_tag slide.image.thumb.url, class: 'figure-img img-fluid rounded'
   figcaption.figure-caption 
     = link_to 'Тестировать', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-success'

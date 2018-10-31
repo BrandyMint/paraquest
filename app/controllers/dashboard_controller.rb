@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    render locals: { }
+    redirect_to slides_path
   end
 end

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :password_resets, only: %i[new create edit update]
-  resources :slides, only: [:index]
+  resources :slides, only: [:index, :show]
   resources :games
 
   resources :user_games, only: [:index]
