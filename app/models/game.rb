@@ -8,15 +8,18 @@ class Game < ApplicationRecord
   belongs_to :user
   belongs_to :slide
 
-  validates :slide_id, uniqueness: { scope: :user_id }
-
-  alias_attribute :left, :x
-  alias_attribute :top, :y
-
-  before_save do
+  # TODO Вынести в JS
+  before_validation do
     self.x = 100.0 * click_left.to_f / current_slide_width.to_f
     self.y = 100.0 * click_top.to_f / current_slide_height.to_f
   end
+
+  validates :slide_id, uniqueness: { scope: :user_id }
+  validates :x, presence: true, numericality: { less_than_or_equal_to: 100, greater_than_or_equal_to: 0 }
+  validates :y, presence: true, numericality: { less_than_or_equal_to: 100, greater_than_or_equal_to: 0 }
+
+  alias_attribute :left, :x
+  alias_attribute :top, :y
 
   def coordinate
     Coordinate.
