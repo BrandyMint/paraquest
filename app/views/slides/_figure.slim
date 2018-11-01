@@ -1,5 +1,10 @@
-figure.figure
+.media.m-b-md
   = link_to slide_path(slide) do
-    = image_tag slide.image.thumb.url, class: 'figure-img img-fluid rounded'
-  figcaption.figure-caption 
-    = link_to 'Тестировать', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-success'
+    = image_tag slide.image.thumb.url, class: 'mr-3'
+  .media-body
+    h3.mt-0= slide
+
+    - if slide.games.any?
+      = "#{slide.games.count} тестов"
+    - else
+      p никто не проходил

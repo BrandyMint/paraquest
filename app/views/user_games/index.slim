@@ -3,8 +3,10 @@ h1 Ваши тесты
 table.table.table-condensed.table-narrow
   - games.each do |game|
     tr
-      td= game.id
-      td= l game.created_at
-      td= game.slide.title
+      td= human_time game.created_at
+      td
+        h2= game.slide
+        = link_to slide_path(game.slide) do
+          = image_tag game.slide.image.thumb.url
       td= game.coordinate
 

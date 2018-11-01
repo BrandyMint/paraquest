@@ -29,7 +29,6 @@ document.addEventListener("turbolinks:load", function() {
     console.log('click');
     var x = event.pageX - this.offsetLeft;
     var y = event.pageY - this.offsetTop;
-    alert("X Coordinate: " + x + " Y Coordinate: " + y);
     $('[data-game="form"] input#game_coordinate_x').val(x);
     $('[data-game="form"] input#game_coordinate_y').val(y);
     $('[data-game="form"]').submit()

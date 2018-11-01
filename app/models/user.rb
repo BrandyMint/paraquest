@@ -19,6 +19,10 @@ class User < ApplicationRecord
     self.role = :admin if self.class.all.empty?
   end
 
+  def played_slide? slide
+    games.where(slide: slide).exists?
+  end
+
   def to_s
     nick
   end

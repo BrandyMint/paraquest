@@ -1,0 +1,11 @@
+h1 Пользователь #{user}
+
+- if user.games.exists?
+  h2.m-t-md Прошел тесты:
+  ul
+    - user.games.order('id desc').each do |game|
+      li
+        = link_to game.slide, slide_path(game.slide)
+        = human_time game.created_at
+- else
+  .alert.alert-info Еще не тестировался
