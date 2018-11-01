@@ -20,8 +20,8 @@ positionElement = (event) =>
     y: mouseY(event)
   }
   wrapperPosition = $('[data-slideWrapper="game"]').position()
-  follower.style.top = mouse.y - wrapperPosition.top + 'px'
-  follower.style.left = mouse.x - wrapperPosition.left + 'px'
+  follower.style.top = mouse.y - wrapperPosition.top + window.scrollY + 'px'
+  follower.style.left = mouse.x - wrapperPosition.left + window.scrollX + 'px'
 
 setFollower = ->
 	follower = document.querySelector('[data-follower="mouse"]')

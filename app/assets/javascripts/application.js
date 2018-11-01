@@ -9,17 +9,27 @@
 //= require flash
 //= require_tree .
 
+window.onload = function () {
+  image = document.querySelector('[data-slide="image"]');
+  var resize = function() {
+      $wrapper = $('[data-slideWrapper]');
+      $wrapper.width($(image).width());
+  };
+
+  if (image) {
+    if (image.complete) {
+      resize();
+    } else {
+      image.onload = resize;
+    }
+  }
+};
 
 // Другой ример https://codepen.io/tamm/pen/LIFam
+$( document ).ready( function() {
+  $wrapper = $('[data-slideWrapper]');
 
-document.addEventListener("turbolinks:load", function() {
-
-  $image = $('[data-slide="image"]');
-  if ($image.length > 0) {
-    $('[data-slidewrapper]').width($image.width());
-  }
-
-  $('[data-slideWrapper]').on("click", function(event) {
+  $wrapper.on("click", function(event) {
     var x = event.pageX - this.offsetLeft;
     var y = event.pageY - this.offsetTop;
 
@@ -37,6 +47,9 @@ document.addEventListener("turbolinks:load", function() {
     $form.find('input#game_click_top').val(y);
     $form.find('input#game_click_left').val(x);
 
-    $('[data-game="form"]').submit()
+    $('[data-game="form"]').submit();
   });
+});
+
+document.addEventListener("turbolinks:load", function() {
 });
