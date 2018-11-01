@@ -1,11 +1,14 @@
 - if logged_in? 
-  - if current_user.played_slide?(slide)
+  - game = current_user.games.find_by(slide: slide)
+
+  - if game.present?
     .alert.alert-info Вы уже тестировались
+
+    - if current_user.admin?
+      = link_to 'Удалить тест', admin_game_path(game), method: :delete, data: { confirm: 'Удалить игру?' }, class: 'btn btn-danger btn-sm'
+
   - else
     = link_to 'Пройти тестирование', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-success'
-
-  - if current_user.admin?
-    = link_to 'Удалить тест', admin_game_path(current_user.games.find_by(slide: slide)), method: :delete, data: { confirm: 'Удалить игру?' }, class: 'btn btn-danger btn-sm'
 
 - else
   = link_to 'Пройти тестирование', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-success'

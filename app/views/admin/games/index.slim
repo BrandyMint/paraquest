@@ -1,13 +1,22 @@
-h2 Тестирования (#{games.total_count})
+h2.m-b-md Тестирования (#{games.total_count})
 
 table.table.table-condensed.table-narrow
-  - games.each do |game|
+  thead
     tr
-      td= human_time game.created_at
-      td
-        h2= game.slide
-        = link_to slide_path(game.slide) do
-          = image_tag game.slide.image.thumb.url
-      td= game.coordinate
-      td= link_to game.user, user_path(game.user)
+      th Время
+      th Слайд
+      th Координаты
+      th Пользователь
+      th Действия
+  tbody
+    - games.each do |game|
+      tr
+        td= human_time game.created_at
+        td
+          = link_to slide_path(game.slide) do
+            = image_tag game.slide.image.thumb.url
+        td= game.coordinate
+        td= link_to game.user, user_path(game.user)
+        td
+          = link_to 'Удалить тест', admin_game_path(game), method: :delete, data: { confirm: 'Удалить игру?' }, class: 'btn btn-danger btn-sm'
 
