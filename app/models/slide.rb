@@ -7,10 +7,10 @@ class Slide < ApplicationRecord
 
   scope :ordered, -> { order 'id desc' }
 
-  validates :title, presence: true
+  validates :details, presence: true
   validates :image, presence: true
 
   def to_s
-    "##{id} #{title}"
+    "##{id}"
   end
 end

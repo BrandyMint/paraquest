@@ -14,5 +14,10 @@ hr
   .col-md-3
     h2= "Слайд #{slide}"
     hr
+    div= raw slide.details
+    hr
     = render 'play_slide_button', slide: slide
     = render 'slide_games', slide: slide
+
+    - if logged_in? && current_user.admin?
+      = link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn btn-outline'

@@ -10,6 +10,6 @@ table.table.table-condensed.table-narrow
         td
           = link_to slide.image.url do
             = image_tag slide.image.thumb.url
-        td= slide.title
+        td= raw slide.details
 
 = paginate slides

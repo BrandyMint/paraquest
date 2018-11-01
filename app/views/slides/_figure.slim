@@ -2,7 +2,7 @@
   = link_to slide_path(slide) do
     = image_tag slide.image.thumb.url, class: 'mr-3'
   .media-body
-    .mt-0= slide
+    div= raw slide.details
 
     - if slide.games.any?
       .badge.badge-warning= "#{slide.games.count} человек прошло"
