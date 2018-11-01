@@ -14,7 +14,7 @@
 
 document.addEventListener("turbolinks:load", function() {
 
-  $('[data-game="image"]').on("click", function(event) {
+  $('[data-slideWrapper]').on("click", function(event) {
     var x = event.pageX - this.offsetLeft;
     var y = event.pageY - this.offsetTop;
 

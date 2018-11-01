@@ -12,5 +12,9 @@ h1 Играем (#{game.slide.title})
   = f.hidden_field :click_top
   = f.hidden_field :click_left
 
-= image_tag game.slide.image.url, class: 'crosshair game-image', data: { game: :image }
+div.slide-wrapper data={width: game.slide.width, height: game.slide.height, slideWrapper: 'game'}
+  = image_tag game.slide.image.url, class: 'crosshair game-image', data: { game: :image }
+  div(data-follower="mouse")
+      div(data-follower-circle1)
+      div(data-follower-circle2)
 hr

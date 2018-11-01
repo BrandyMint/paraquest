@@ -3,9 +3,13 @@ hr
 
 .row
   .col-md-9
-    div.slide-wrapper data={width: slide.width, height: slide.height, slideWrapper: true}
+    div.slide-wrapper data={width: slide.width, height: slide.height, slideWrapper: 'show'}
       = image_tag slide.image.url, class: 'img-fluid'
-      = render 'show_games', slide: slide
+
+      - if logged_in? && (current_user.admin? || current_user.played_slide?(slide))
+        = render 'show_games', slide: slide
+      - else
+        .alert.alert-info Пройдите тестирование чтобы увидеть результаты других
 
   .col-md-3
     h2= "Слайд #{slide}"
