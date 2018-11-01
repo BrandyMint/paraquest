@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
-// vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery3
 //= require rails-ujs
 //= require turbolinks
@@ -22,15 +10,28 @@
 //= require_tree .
 
 
-// ругой ример https://codepen.io/tamm/pen/LIFam
+// Другой ример https://codepen.io/tamm/pen/LIFam
 
 document.addEventListener("turbolinks:load", function() {
+
   $('[data-game="image"]').on("click", function(event) {
-    console.log('click');
     var x = event.pageX - this.offsetLeft;
     var y = event.pageY - this.offsetTop;
-    $('[data-game="form"] input#game_coordinate_x').val(x);
-    $('[data-game="form"] input#game_coordinate_y').val(y);
+
+    var $image = $('[data-game="image"]');
+    var width = $image.width();
+    var height = $image.height();
+
+    console.log("Click X Coordinate: " + x + " Y Coordinate: " + y + ", image width: " + width + ", image height: " + height);
+
+    $form = $('[data-game="form"]');
+
+    $form.find('input#game_current_slide_width').val(width);
+    $form.find('input#game_current_slide_height').val(height);
+
+    $form.find('input#game_click_top').val(y);
+    $form.find('input#game_click_left').val(x);
+
     $('[data-game="form"]').submit()
   });
 });

@@ -4,6 +4,7 @@
  *= require nprogress
  *= require nprogress-bootstrap
  *= require nprogress-turbolinks5
+ *= require follower
  *= require_self
  */
 
@@ -15,3 +16,5 @@
 }
 
 .crosshair       { cursor: crosshair; }
+
+.slide-wrapper { position: relative; }

@@ -3,26 +3,12 @@ hr
 
 .row
   .col-md-9
-    = image_tag slide.image.url, class: 'img-fluid'
+    div.slide-wrapper data={width: slide.width, height: slide.height, slideWrapper: true}
+      = image_tag slide.image.url, class: 'img-fluid'
+      = render 'show_games', slide: slide
+
   .col-md-3
     h2= "Слайд #{slide}"
     hr
-    - if logged_in? && !current_user.played_slide?(slide)
-      = link_to 'Пройти тестирование', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-success'
-    - else
-      .alert.alert-info Вы уже тестировались
-
-    - if slide.games.exists?
-
-      h3.m-t-md= "Уже прошли (#{slide.games.count} раз)"
-      ul
-        - slide.games.order('id desc').each do |game|
-          li
-            = link_to user_path(game.user) do
-              - if logged_in? && current_user == game.user
-                b= game.user
-              - else
-                = game.user
-            = human_time game.created_at
-    - else
-      .m-t-md.alert.alert-info Этот слайд еще никто не проходил
+    = render 'play_slide_button', slide: slide
+    = render 'slide_games', slide: slide

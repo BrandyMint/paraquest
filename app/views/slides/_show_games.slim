@@ -1,0 +1,9 @@
+- slide.games.each do |game|
+  div(data-follower style=game.css_style data={x: game.coordinate.x, y: game.coordinate.y})
+    - if logged_in? && game.user == current_user
+      div(data-follower-circle1)
+      div(data-follower-circle2)
+    - else
+      div(data-follower-circle)
+      /div(data-follower-circle1)
+      /div(data-follower-circle2)

@@ -7,8 +7,10 @@ h1 Играем (#{game.slide.title})
 
 = form_for game, data: { game: :form } do |f|
   = f.hidden_field :slide_id
-  = f.hidden_field :coordinate_x
-  = f.hidden_field :coordinate_y
+  = f.hidden_field :current_slide_width
+  = f.hidden_field :current_slide_height
+  = f.hidden_field :click_top
+  = f.hidden_field :click_left
 
 = image_tag game.slide.image.url, class: 'crosshair game-image', data: { game: :image }
 hr

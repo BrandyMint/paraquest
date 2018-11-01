@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_01_133921) do
+ActiveRecord::Schema.define(version: 2018_11_01_144512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2018_11_01_133921) do
   create_table "games", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "slide_id", null: false
-    t.integer "coordinate_x", null: false
-    t.integer "coordinate_y", null: false
+    t.decimal "x", null: false
+    t.decimal "y", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slide_id", "user_id"], name: "index_games_on_slide_id_and_user_id", unique: true

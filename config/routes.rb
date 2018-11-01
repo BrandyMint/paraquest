@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   root to: 'dashboard#index'
 
   namespace :admin do
-    resources :games, only: [:index]
+    resources :games, only: [:index, :destroy]
     resources :users
     resources :slides
   end
