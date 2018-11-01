@@ -1,4 +1,6 @@
 class Slide < ApplicationRecord
+  include ImageWithGeometry
+
   mount_uploader :image, ImageUploader
 
   has_many :games
