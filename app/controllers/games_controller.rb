@@ -14,6 +14,7 @@ class GamesController < ApplicationController
     game = current_user.games.create! permitted_params
     redirect_to slide_path(game.slide_id), notice: 'Отметка учтена'
   rescue ActiveRecord::RecordInvalid => e
+    Bugsnag.notify e
     flash.now.alert = e.message
     render :new, locals: { game: e.record }
   end
