@@ -15,3 +15,5 @@ html
     .container-fluid
       = app_title
       span.m-l-sm.text-muted= AppVersion.to_s
+
+      = render 'metrika' if Rails.env.production?
