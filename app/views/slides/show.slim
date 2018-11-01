@@ -4,7 +4,7 @@ hr
 .row
   .col-md-9
     div.slide-wrapper data={width: slide.width, height: slide.height, slideWrapper: 'show'}
-      = image_tag slide.image.url, class: 'img-fluid'
+      = image_tag slide.image.url, class: 'img-fluid', data: { slide: :image }
 
       - if logged_in? && (current_user.admin? || current_user.played_slide?(slide))
         = render 'show_games', slide: slide

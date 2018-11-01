@@ -14,6 +14,11 @@
 
 document.addEventListener("turbolinks:load", function() {
 
+  $image = $('[data-slide="image"]');
+  if ($image.length > 0) {
+    $('[data-slidewrapper]').width($image.width());
+  }
+
   $('[data-slideWrapper]').on("click", function(event) {
     var x = event.pageX - this.offsetLeft;
     var y = event.pageY - this.offsetTop;
