@@ -15,13 +15,14 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: %i[new create edit update]
   resources :slides, only: [:index, :show]
-  resources :games
+  resources :games, only: [:new, :create]
 
   resources :user_games, only: [:index]
 
   root to: 'dashboard#index'
 
   namespace :admin do
+    resources :games, only: [:index]
     resources :users
     resources :slides
   end

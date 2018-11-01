@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  layout 'simple'
-
   def show
     render locals: { user: User.find(params[:id]) }
   end
@@ -15,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    render :new, locals: { user: User.new }
+    render :new, locals: { user: User.new }, layout: 'simple'
   end
 
   def create
@@ -28,7 +26,7 @@ class UsersController < ApplicationController
     redirect_to profile_path
   rescue ActiveRecord::RecordInvalid => e
     flash.now.alert = e.message
-    render :new, locals: { user: e.record }
+    render :new, locals: { user: e.record }, layout: 'simple'
   end
 
   private

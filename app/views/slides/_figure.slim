@@ -2,9 +2,10 @@
   = link_to slide_path(slide) do
     = image_tag slide.image.thumb.url, class: 'mr-3'
   .media-body
-    h3.mt-0= slide
+    .mt-0= slide
 
     - if slide.games.any?
-      = "#{slide.games.count} тестов"
-    - else
-      p никто не проходил
+      .badge.badge-warning= "#{slide.games.count} человек прошло"
+
+      - if logged_in? && current_user.played_slide?(slide)
+        .badge.badge-info Я прошел

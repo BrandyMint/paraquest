@@ -1,7 +1,7 @@
 module ApplicationHelper
   def app_title
     # 'Paraquest bitcoin exchange markets'
-    'paraquest'
+    'Параквест'
   end
 
   def human_time(time)
