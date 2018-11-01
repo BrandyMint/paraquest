@@ -2,7 +2,12 @@ class GamesController < ApplicationController
   before_action :require_login
 
   def new
-    render locals: { game: Game.new(permitted_params) }
+    game = Game.new(permitted_params)
+    if current_user.played_slide? game.slide
+      redirect_to slide_path(game.slide), alert: 'Уже прошли тестирование'
+    else
+      render locals: { game: game }
+    end
   end
 
   def create

@@ -26,8 +26,9 @@ window.onload = function () {
 };
 
 // Другой ример https://codepen.io/tamm/pen/LIFam
-$( document ).ready( function() {
-  $wrapper = $('[data-slideWrapper]');
+
+document.addEventListener("turbolinks:load", function() {
+  $wrapper = $('[data-slideWrapper="game"]');
 
   $wrapper.on("click", function(event) {
     var x = event.pageX - this.offsetLeft;
@@ -49,7 +50,4 @@ $( document ).ready( function() {
 
     $('[data-game="form"]').submit();
   });
-});
-
-document.addEventListener("turbolinks:load", function() {
 });
