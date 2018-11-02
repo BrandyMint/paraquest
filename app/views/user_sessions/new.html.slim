@@ -1,4 +1,4 @@
-h1 Представьтесь
+h2 Представьтесь
 hr
 = simple_form_for user_session do |f|
   = f.input :login
@@ -7,6 +7,6 @@ hr
 hr
 .row
   .col-md-6
-    = link_to 'Забыл пароль', new_password_reset_path
+    = link_to 'Забыл пароль', new_password_reset_path(email: user_session.login)
   .col-md-6
     = link_to 'Зарегистрироваться', signup_path

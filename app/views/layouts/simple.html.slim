@@ -11,9 +11,9 @@ html
       .row
         .col-md-4.offset-md-4
           h1.m-t-lg
+            span.m-r-md= ion_icon :jet
             = link_to app_title, root_path
-          .text-muted= AppVersion
-          hr
+          hr.m-b-lg
       .row
         .col-md-4.offset-md-4 = yield
     = render 'flashes'

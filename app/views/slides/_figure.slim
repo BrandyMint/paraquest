@@ -5,7 +5,7 @@
     div= raw slide.details
 
     - if slide.games.any?
-      .badge.badge-warning= "#{slide.games.count} человек прошло"
+      .badge.badge-warning= "Сыграло: #{slide.games.count} чел."
 
       - if logged_in? && current_user.played_slide?(slide)
         .badge.badge-info Я прошел

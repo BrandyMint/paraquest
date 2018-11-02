@@ -3,4 +3,5 @@ ru:
     wrong_password: Неверный пароль
     welcome: Добро пожаловать!
     registered: Добро пожаловать, %{email}!
+    not_authenticated: Представьтесь!
     goodbye: Пока!

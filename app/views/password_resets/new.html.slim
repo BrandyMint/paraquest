@@ -1,12 +1,14 @@
-h2 Напишите email для восстановления пароля
+h2 Восстановление пароля
+
+p Напишите email, на который отправить ссылку для восстановления пароля
 
 = simple_form_for(:password_reset, url: password_resets_path, method: :post) do |f|
-  = f.input :email, as: :string, label: false, hint: 'Логин (email)'
+  = f.input :email, input_html: { value: params[:email] }, as: :string, label: false, hint: 'Логин (email)'
   = f.button :submit, 'Восстановить пароль', class: 'btn btn-success'
 
 hr
 .row
   .col-md-6
-    = link_to 'Вспомнил пароль, войти', login_path
+    = link_to 'Вспомнил пароль, войти!', login_path
   .col-md-6
     = link_to 'Зарегистрироваться', signup_path

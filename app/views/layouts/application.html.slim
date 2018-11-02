@@ -11,10 +11,7 @@ html
     .container-fluid
       = yield
     = render 'flashes'
-    hr
-    .container-fluid
-      = app_title
-      span.m-l-sm.text-muted= AppVersion.to_s
-
-      = render 'metrika' if Rails.env.production?
-      = render 'chat'
+    
+    = render 'footer'
+    = render 'metrika' if Rails.env.production?
+    = render 'chat'

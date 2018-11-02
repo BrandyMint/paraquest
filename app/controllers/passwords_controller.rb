@@ -6,9 +6,9 @@ class PasswordsController < ApplicationController
   def update
     if form.valid?
       current_user.change_password! form.password
-      flash.now.alert = 'Пароль изменен.'
+      flash.now.notice = 'Пароль изменен.'
     else
-      flash.now.alert = form.errors.messages.to_s
+      flash.now.notice = form.errors.messages.to_s
     end
     render :edit, locals: { change_password_form: form }
   end
