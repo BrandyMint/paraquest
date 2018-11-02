@@ -312,7 +312,7 @@ Rails.application.config.sorcery.configure do |config|
     # options: `:deliver_later`, `:deliver_now`, `:deliver`
     # Default: :deliver (Rails version < 4.2) or :deliver_now (Rails version 4.2+)
     #
-    user.email_delivery_method = :deliver_later
+    # user.email_delivery_method = :deliver_later
 
     # activation needed email method on your mailer class.
     # Default: `:activation_needed_email`
@@ -370,7 +370,7 @@ Rails.application.config.sorcery.configure do |config|
     # hammering protection, how long in seconds to wait before allowing another email to be sent.
     # Default: `5 * 60`
     #
-    # user.reset_password_time_between_emails =
+    user.reset_password_time_between_emails = Rails.env.production? ? 5 * 60 : 0
 
     # access counter to a reset password page attribute name
     # Default: `:access_count_to_reset_password_page`

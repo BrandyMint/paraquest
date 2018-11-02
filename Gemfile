@@ -36,6 +36,8 @@ gem 'slim'
 gem 'slim-rails'
 gem 'nprogress-rails'
 gem 'jquery-rails'
+gem 'letter_opener'
+gem 'letter_opener_web'
 
 gem 'workflow', github: 'geekq/workflow'
 gem 'settingslogic'

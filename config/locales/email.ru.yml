@@ -1,0 +1,4 @@
+ru:
+  email:
+    reset_password:
+      subject: Восстановление пароля

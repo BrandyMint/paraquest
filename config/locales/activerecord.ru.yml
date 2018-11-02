@@ -1,12 +1,19 @@
 ru:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: Укажите пароль
+            password_confirmation:
+              confirmation: Пароли не совпадают
     models:
       user: Пользователь
     attributes:
       default:
         login: Email
-      defaults:
-        login: Email
+        nick: Псевдоним
       user_session:
         login: Email
         password: Пароль

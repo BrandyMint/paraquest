@@ -25,7 +25,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    flash.now.notice = t_flash(:goodbye)
+    redirect_to root_path, alert: t_flash(:goodbye)
   end
 
   private

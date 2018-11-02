@@ -8,7 +8,8 @@ class User < ApplicationRecord
   scope :ordered, -> { order :id }
 
   validates :email, email: true, presence: true, uniqueness: true
-  validates :password, presence: true, on: :create
+  validates :password, presence: true, confirmation: true # length: { minimum: 8 }
+  # validates :password_confirmation, presence: true
 
   validates :nick, presence: true, uniqueness: true
 

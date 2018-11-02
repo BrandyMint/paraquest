@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development? && defined? LetterOpenerWeb
+
   get 'user_games/index'
   get 'login' => 'user_sessions#new', as: :login
   delete 'logout' => 'user_sessions#destroy', as: :logout
   resources :user_sessions, only: %i[new create destroy]
+  resources :password_resets, only: %i[new create edit update]
 
   get 'signup' => 'users#new', as: :signup
 
