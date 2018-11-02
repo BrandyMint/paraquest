@@ -1,4 +1,4 @@
-header.navbar.navbar-expand-lg.navbar-light.bg-light
+header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top 
   = link_to root_path, class: 'navbar-brand' do
     span.m-r-md= ion_icon :jet
     = app_title
@@ -27,3 +27,5 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light
       - else
         = active_link_to 'Зарегистрироваться', signup_path, wrap_tag: :li, class: 'nav-link', wrap_class: 'nav-item'
         = active_link_to 'Войти', login_path, wrap_tag: :li, class: 'nav-link', wrap_class: 'nav-item'
+
+.m-b-lg &nbsp;

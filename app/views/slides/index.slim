@@ -1,8 +1,6 @@
-h1 Слайды (#{slides.total_count})
-
 .row
   - slides.each do |slide|
-    .col-md-3
-      = render 'figure', slide: slide
+    .col-md-2.m-b-md
+      = render 'card', slide: slide
 
 = paginate slides
