@@ -1,38 +1,38 @@
+FOLLOWER_QUERY = '[data-follower="mouse"]'
+WRAPPER_QUERY = '[data-slideWrapper="game"]'
+
 follower = undefined
-
-mouseX = (event) =>
-  return event.clientX
-
-mouseY = (event) =>
-  return event.clientY
+wrapper = undefined
+$wrapper = undefined
 
 positionElement = (event) =>
-  unless follower
+  unless follower && wrapper
     return
 
-  $wrapper = $('[data-slideWrapper="game"]')
+  wrapperPosition = $wrapper.position()
 
-  if $wrapper.length == 0
-    return
+  left = event.clientX - wrapperPosition.left + window.scrollX
+  top = event.clientY - wrapperPosition.top + window.scrollY
 
-  mouse = {
-    x: mouseX(event)
-    y: mouseY(event)
-  }
-  wrapperPosition = $('[data-slideWrapper="game"]').position()
-  follower.style.top = mouse.y - wrapperPosition.top + window.scrollY + 'px'
-  follower.style.left = mouse.x - wrapperPosition.left + window.scrollX + 'px'
+  left = 0 if left < 0
+  top = 0 if top < 0
+
+  left = $wrapper.width() if left > $wrapper.width()
+  top = $wrapper.height() if top > $wrapper.height()
+
+  follower.style.left = left + 'px'
+  follower.style.top = top + 'px'
 
 setFollower = ->
-	follower = document.querySelector('[data-follower="mouse"]')
+  follower = document.querySelector FOLLOWER_QUERY
+  wrapper = document.querySelector WRAPPER_QUERY
+  $wrapper = $ wrapper
 
-setupTimer = ->
-	timer = false
-	window.onmousemove = init = (event) =>
-		_event = event
-		timer = setTimeout =>
-			positionElement(_event)
-		, 1
+  if wrapper
+    wrapper.onmousemove = (event) =>
+      _event = event
+      setTimeout =>
+        positionElement(_event)
+      , 1
 
 document.addEventListener "turbolinks:load", setFollower
-$( document ).ready setupTimer
