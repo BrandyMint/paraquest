@@ -11,5 +11,7 @@ table.table.table-condensed.table-narrow
           = link_to slide.image.url do
             = image_tag slide.image.thumb.url
         td= raw slide.details
+        td
+          = link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn'
 
 = paginate slides

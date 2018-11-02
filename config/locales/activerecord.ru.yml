@@ -11,6 +11,9 @@ ru:
     models:
       user: Пользователь
     attributes:
+      slide:
+        image: Изображение
+        details: Описание
       user_session:
         login: Email
         password: Пароль
