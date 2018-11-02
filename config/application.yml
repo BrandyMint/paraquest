@@ -2,7 +2,7 @@ defaults: &defaults
   title: Paraquest
   bugsnag_api_key: 41f2a8dfef540a618fdb9670770d0baa
   default_url_options: &default_url_options
-    host: <%= ENV['APP_HOST'] || 'localhost' %>
+    host: <%= ENV['APP_HOST'] || 'paraquest.ru' %>
   sidekiq_redis:
     url: redis://localhost:6379/1
 
