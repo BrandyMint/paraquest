@@ -54,4 +54,4 @@ end
 
 Sidekiq.default_worker_options = { 'backtrace' => true }
 
-Sidekiq::Cron::Job.load_from_hash YAML.load_file(CRONTAB_FILE) unless Rails.env.test? || Rails.env.development?
+# Sidekiq::Cron::Job.load_from_hash YAML.load_file(CRONTAB_FILE) unless Rails.env.test? || Rails.env.development?

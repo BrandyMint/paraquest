@@ -29,6 +29,7 @@ require 'capistrano/rails/assets'
 require 'capistrano/faster_assets'
 require 'capistrano/rails/migrations'
 require 'bugsnag-capistrano'
+require 'capistrano/sidekiq'
 require 'capistrano/semver-tag'
 require 'capistrano/upload-config'
 

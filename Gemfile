@@ -153,7 +153,7 @@ group :development, :test do
   gem 'capistrano-tasks', github: 'alfagen/capistrano-tasks', require: false
   gem 'capistrano-upload-config', require: false
   gem 'capistrano3-puma', github: 'seuros/capistrano-puma', require: false
-
+  gem 'capistrano-sidekiq', require: false
 end
 
 group :development do

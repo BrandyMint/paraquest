@@ -20,8 +20,12 @@ set :deploy_to, -> { "/home/#{fetch(:user)}/#{fetch(:application)}" }
 # ask :branch, ENV['BRANCH'] || proc { `git rev-parse --abbrev-ref HEAD`.chomp } || 'master'
 
 set :branch, 'master'
+
 set :rbenv_type, :user
 set :rbenv_ruby, File.read('.ruby-version').strip
+
+#set :sidekiq_processes, 3
+#set :sidekiq_options_per_process, ['--queue critical', '--queue critical --queue default', '--queue purgers --queue default --queue critical']
 
 # https://gist.github.com/pitch-gist/2999707
 # bundle exec cap production maintenance:enable REASON="замена сервера" UNTIL="в 2:00"
