@@ -11,12 +11,10 @@ ru:
     models:
       user: Пользователь
     attributes:
-      default:
-        login: Email
-        nick: Псевдоним
       user_session:
         login: Email
         password: Пароль
       user:
         email: Email
+        nick: Псевдоним
         password: Пароль

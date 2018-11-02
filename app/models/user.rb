@@ -8,10 +8,16 @@ class User < ApplicationRecord
   scope :ordered, -> { order :id }
 
   validates :email, email: true, presence: true, uniqueness: true
-  validates :password, presence: true, confirmation: true # length: { minimum: 8 }
-  # validates :password_confirmation, presence: true
+  validates :password, presence: true, confirmation: true, if: :validate_password?
 
-  validates :nick, presence: true, uniqueness: true
+  validates :nick,
+    length: { minimum: 3 },
+    presence: true,
+    uniqueness: true,
+    format: {
+      with: /\A[a-z][a-z0-9_]+\z/i,
+      message: 'Для псевдонима используется только латиниские символы, цифры и подчеркивание. Начинаться должен с буквы.'
+    }
 
   enumerize :role, in: [:user, :admin], predicates: true
 
@@ -26,5 +32,11 @@ class User < ApplicationRecord
 
   def to_s
     nick
+  end
+
+  private
+
+  def validate_password?
+    new_record? || crypted_password_changed?
   end
 end
