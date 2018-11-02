@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development? && defined? LetterOpenerWeb
+  mount Sidekiq::Web => '/sidekiq' #, constraints: RouteConstraints::AdminRequiredConstraint.new
+  get '/sidekiq-stats' => proc { [200, { 'Content-Type' => 'text/plain' }, [Sidekiq::Stats.new.to_json]] }
 
   get 'user_games/index'
   get 'login' => 'user_sessions#new', as: :login

@@ -31,6 +31,11 @@ gem 'rack-utf8_sanitizer'
 gem 'rack-attack'
 gem 'rack-traffic-logger', github: 'BrandyMint/rack-traffic-logger', branch: 'develop'
 
+gem 'sidekiq-failures', github: 'mhfs/sidekiq-failures'
+gem 'sidekiq-status'
+gem 'sidekiq'
+gem 'sidekiq-cron'
+
 gem 'virtus'
 gem 'slim'
 gem 'slim-rails'
