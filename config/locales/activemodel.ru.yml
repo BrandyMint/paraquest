@@ -1,0 +1,6 @@
+ru:
+  activemodel:
+    attributes:
+      user_session:
+        login: Email
+        password: Пароль

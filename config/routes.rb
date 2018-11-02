@@ -1,3 +1,5 @@
+require 'route_contraints'
+
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development? && defined? LetterOpenerWeb
   mount Sidekiq::Web => '/sidekiq', constraints: RouteConstraints::AdminRequiredConstraint.new
