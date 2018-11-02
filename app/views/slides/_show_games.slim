@@ -6,3 +6,4 @@
     - else
       div(data-follower-circle)
       div(data-follower-circle3)
+    = link_to game.user, user_path(game.user), class: 'follower-user', 'data-follower-user' => true

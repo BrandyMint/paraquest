@@ -13,5 +13,7 @@ html
     = render 'flashes'
     
     = render 'footer'
-    = render 'metrika' if Rails.env.production?
-    = render 'chat'
+
+    - if Rails.env.production?
+      = render 'metrika'
+      = render 'chat'
