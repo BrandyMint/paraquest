@@ -2,7 +2,7 @@
   = link_to slide_path(slide) do
     = image_tag slide.image.thumb.url, class: 'card-img-top'
   .card-body
-    h5.card-title= slide.id
+    h5.card-title= "##{slide.id}"
     p.card-text= raw slide.details
     - if slide.games.any?
       .badge.badge-warning= "Сыграло: #{slide.games.count} чел."
