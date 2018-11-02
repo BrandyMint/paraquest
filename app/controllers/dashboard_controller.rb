@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    redirect_to slides_path
+    render locals: { slides: paginate(Slide.ordered) }
   end
 end

@@ -1,14 +1,17 @@
 - if slide.games.exists?
+  h3.m-t-0= "Уже прошли (#{slide.games.count} раз)"
 
-  h3.m-t-md= "Уже прошли (#{slide.games.count} раз)"
-  ul
-    - slide.games.order('id desc').each do |game|
-      li
-        = link_to user_path(game.user) do
-          - if logged_in? && current_user == game.user
-            b= game.user
-          - else
-            = game.user
-        = human_time game.created_at
+  table.table.table-sm.table-striped
+    tbody
+      - slide.games.order('id desc').each do |game|
+        tr
+          td
+            = link_to user_path(game.user) do
+              - if logged_in? && current_user == game.user
+                b= game.user
+              - else
+                = game.user
+          td
+            = human_time game.created_at
 - else
-  .m-t-md.alert.alert-info Этот слайд еще никто не проходил
+  .alert.alert-info Этот слайд еще никто не проходил

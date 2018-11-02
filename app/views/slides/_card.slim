@@ -11,7 +11,7 @@
         .badge.badge-info Я прошел
         = link_to 'Смотреть результаты', slide_path(slide), class: 'card-link'
     - unless logged_in? && current_user.played_slide?(slide)
-      = link_to 'Пройти', slide_path(slide), class: 'btn btn-primary'
+      = link_to 'Пройти', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-primary'
 
 
 /.media.m-b-md

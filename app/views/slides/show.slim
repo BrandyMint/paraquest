@@ -1,4 +1,14 @@
-= link_to '&larr; назад в список слайдов'.html_safe, slides_path
+.row
+  .col-md-3
+    -# = link_to '&larr; назад в список слайдов'.html_safe, slides_path
+    h2.m-b-0= "Слайд #{slide}"
+  .col-md-3
+    - if logged_in? && current_user.admin?
+      = link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn btn-outline'
+
+  .col-md-6
+    .float-right
+      = render 'play_slide_button', slide: slide
 hr
 
 .row
@@ -12,12 +22,9 @@ hr
         .alert.alert-info Пройдите тестирование чтобы увидеть результаты других
 
   .col-md-3
-    h2= "Слайд #{slide}"
-    hr
-    div= raw slide.details
-    hr
-    = render 'play_slide_button', slide: slide
     = render 'slide_games', slide: slide
 
-    - if logged_in? && current_user.admin?
-      = link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn btn-outline'
+hr
+.row
+  .col-md-12
+    div= raw slide.details

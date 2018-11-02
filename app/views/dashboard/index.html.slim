@@ -1,1 +1,6 @@
-h1 Предложения
+.row
+  - slides.each do |slide|
+    .col-md-2.m-b-md
+      = render 'slides/card', slide: slide
+
+= paginate slides

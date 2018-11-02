@@ -1,6 +1,6 @@
 class SlidesController < ApplicationController
   def index
-    render locals: { slides: paginate(Slide.ordered) }
+    redirect_to root_path
   end
 
   def show

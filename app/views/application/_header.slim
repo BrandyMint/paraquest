@@ -4,7 +4,6 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
     = app_title
   .collapse.navbar-collapse#navbarSupportedContent
     ul.navbar-nav.mr-auto
-      = active_link_to "Слайды (#{Slide.count})", slides_path, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
       - if logged_in?
         - if current_user.admin?
           li.nav-item.dropdown
@@ -28,4 +27,4 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
         = active_link_to 'Зарегистрироваться', signup_path, wrap_tag: :li, class: 'nav-link', wrap_class: 'nav-item'
         = active_link_to 'Войти', login_path, wrap_tag: :li, class: 'nav-link', wrap_class: 'nav-item'
 
-.m-b-lg &nbsp;
+.margin-header &nbsp;
