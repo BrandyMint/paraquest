@@ -1,17 +1,21 @@
-.card
+.card.shadow-sm
   = link_to slide_path(slide) do
     = image_tag slide.image.thumb.url, class: 'card-img-top'
   .card-body
-    h5.card-title= "##{slide.id}"
-    p.card-text= raw slide.details
-    - if slide.games.any?
-      .badge.badge-warning= "Сыграло: #{slide.games.count} чел."
+    // h5.card-title= "##{slide.id}"
+    .row
+      .col
+        .card-text= "##{slide.id}"
+      .col
+        - if slide.games.any?
+          .float-right.badge.badge-success= slide.games.count
 
-      - if logged_in? && current_user.played_slide?(slide)
-        .badge.badge-info Я прошел
-        = link_to 'Смотреть результаты', slide_path(slide), class: 'card-link'
-    - unless logged_in? && current_user.played_slide?(slide)
-      = link_to 'Пройти', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-primary'
+    .m-t-md
+      - if slide.games.any?
+        - if logged_in? && current_user.played_slide?(slide)
+          = link_to 'Результаты', slide_path(slide), class: 'btn btn-info btn-sm'
+      - unless logged_in? && current_user.played_slide?(slide)
+        = link_to 'Пройти', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-primary btn-sm'
 
 
 /.media.m-b-md
