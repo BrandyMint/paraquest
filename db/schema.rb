@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_160309) do
+ActiveRecord::Schema.define(version: 2018_11_09_162204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bundles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "title"], name: "index_bundles_on_user_id_and_title", unique: true
+    t.index ["user_id"], name: "index_bundles_on_user_id"
+  end
 
   create_table "games", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -34,6 +43,8 @@ ActiveRecord::Schema.define(version: 2018_11_09_160309) do
     t.datetime "updated_at", null: false
     t.integer "width", null: false
     t.integer "height", null: false
+    t.bigint "bundle_id", null: false
+    t.index ["bundle_id"], name: "index_slides_on_bundle_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_160309) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token"
   end
 
+  add_foreign_key "bundles", "users"
   add_foreign_key "games", "slides"
   add_foreign_key "games", "users"
 end
