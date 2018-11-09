@@ -11,7 +11,7 @@ class CreateBundles < ActiveRecord::Migration[5.2]
 
     add_reference :slides, :bundle
 
-    migrate_slides Rails.env.production? ? :shalnov : :dapi
+    migrate_slides Rails.env.production? ? :Shalnov : :dapi
 
     change_column_null :slides, :bundle_id, false
   end

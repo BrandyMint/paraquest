@@ -3,7 +3,7 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.flex-column.flex-
     span.m-r-md= ion_icon :jet
     = app_title
   ul.navbar-nav.flex-row.d-none.d-md-flex
-    = active_link_to 'Пилоты', users_path
+    = active_link_to 'Пилоты', users_path, wrap_tag: :li, wrap_class: 'nav-item', class: 'nav-link', active: :inclusive
     - if logged_in? && current_user.admin?
       li.nav-item.dropdown
         a id="navbarAdminDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class='nav-link dropdown-toggle' role='button' href='#'
