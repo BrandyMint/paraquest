@@ -18,6 +18,10 @@ ru:
         login: Email
         password: Пароль
       user:
+        name: Имя и Фамилия
+        image: Фото
+        remove_image: Удалить фото
+        bio: Достижения
         email: Email
         nick: Псевдоним
         password: Пароль

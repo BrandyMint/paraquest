@@ -1,5 +1,13 @@
 h1 Пользователь #{user}
 
+.row
+  .col-md-6
+    = image_tag user.image.thumb.url
+
+  .col-md-6
+    p= user.name || 'имя не указано'
+    pre= user.bio
+
 - if user.games.exists?
   h2.m-t-md Прошел тесты:
   ul

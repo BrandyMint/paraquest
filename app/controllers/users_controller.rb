@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    render locals: { users: paginate(User.order(:id)) }
+  end
+
   def show
     render locals: { user: User.find(params[:id]) }
   end

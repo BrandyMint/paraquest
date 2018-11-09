@@ -1,9 +1,18 @@
-= simple_form_for user, method: :put, url: profile_path do |f|
+= simple_form_for user, method: :put, wrapper_mappings: { boolean: :vertical_boolean } , url: profile_path do |f|
   .row
     .col-md-6
       = f.input :email
     .col-md-6
       = f.input :nick
+  .row
+    .col-md-6
+      - if f.object.image.present?
+        = image_tag f.object.image.thumb.url
+        = f.input :remove_image, as: :boolean
+      = f.input :image
+    .col-md-6
+      = f.input :name
+      = f.input :bio
 
   h2 Новый пароль
   .row

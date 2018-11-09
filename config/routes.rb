@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new', as: :signup
 
   resource :profile, only: %i[show edit update]
-  resources :users, only: %i[create show] do
+  resources :users, only: %i[index create show] do
     member do
       get :activate
     end

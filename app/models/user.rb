@@ -2,6 +2,7 @@ class User < ApplicationRecord
   extend Enumerize
 
   authenticates_with_sorcery!
+  mount_uploader :image, ProfileImageUploader
 
   has_many :games
 
