@@ -1,12 +1,14 @@
-class Game < ApplicationRecord
+class SlideGame < ApplicationRecord
+  include Workflow
 
   attr_accessor :current_slide_width
   attr_accessor :current_slide_height
   attr_accessor :click_top
   attr_accessor :click_left
 
-  belongs_to :user
+  belongs_to :bundle_game
   belongs_to :slide
+  belongs_to :user
 
   # TODO Вынести в JS
   before_validation do
@@ -14,12 +16,17 @@ class Game < ApplicationRecord
     self.y = 100.0 * click_top.to_f / current_slide_height.to_f
   end
 
-  validates :slide_id, uniqueness: { scope: :user_id }
-  validates :x, presence: true, numericality: { less_than_or_equal_to: 100, greater_than_or_equal_to: 0 }
-  validates :y, presence: true, numericality: { less_than_or_equal_to: 100, greater_than_or_equal_to: 0 }
+  validates :x, presence: true, numericality: { less_than_or_equal_to: 100, greater_than_or_equal_to: 0 }, if: :done?
+  validates :y, presence: true, numericality: { less_than_or_equal_to: 100, greater_than_or_equal_to: 0 }, if: :done?
 
   alias_attribute :left, :x
   alias_attribute :top, :y
+
+  workflow_column :state
+  workflow do
+    state :draft
+    state :done
+  end
 
   def coordinate
     Coordinate.

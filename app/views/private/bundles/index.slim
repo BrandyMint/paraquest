@@ -1,6 +1,8 @@
+h1 Мои квесты
+
 .row
   - bundles.each do |bundle|
-    .col-lg-2.col-md-4.m-b-md
+    .col-md-2.m-b-md
       = render 'bundles/card', bundle: bundle
 
 = paginate bundles

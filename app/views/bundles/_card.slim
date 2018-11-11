@@ -1,0 +1,11 @@
+.card.shadow-sm
+  = link_to bundle_path(bundle) do
+    = image_tag bundle.image.thumb.url, class: 'card-img-top'
+  .card-body
+    h5.card-title= bundle.title
+    .card-text
+      = "#{bundle.slides.count} слайдов"
+
+    -# - unless logged_in? && current_user.played_slide?(slide)
+    hr
+    = link_to 'Пройти', new_private_bundle_game_path(bundle_id: bundle.id), class: 'btn btn-primary btn-sm'

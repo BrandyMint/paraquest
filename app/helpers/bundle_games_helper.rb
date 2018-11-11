@@ -1,0 +1,2 @@
+module BundleGamesHelper
+end

@@ -1,4 +1,4 @@
-class GamesController < ApplicationController
+class SlideGamesController < ApplicationController
   before_action :require_login
 
   def new

@@ -4,23 +4,23 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.flex-column.flex-
     = app_title
   ul.navbar-nav.flex-row.d-none.d-md-flex
     = active_link_to 'Пилоты', users_path, wrap_tag: :li, wrap_class: 'nav-item', class: 'nav-link', active: :inclusive
-    - if logged_in? && current_user.admin?
-      li.nav-item.dropdown
-        a id="navbarAdminDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class='nav-link dropdown-toggle' role='button' href='#'
-          span Администрирование
-        .dropdown-menu aria-labelledby="navbarAdminDropdown"
-          = link_to "Тесты (#{Game.count})", admin_games_path, class: 'dropdown-item'
-          = link_to "Пользователи (#{User.count})", admin_users_path, class: 'dropdown-item'
-          = link_to "Слайды (#{Slide.count})", admin_slides_path, class: 'dropdown-item'
-
   ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
     - if logged_in?
+      - if current_user.admin?
+        li.nav-item.dropdown
+          a id="navbarAdminDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class='nav-link dropdown-toggle' role='button' href='#'
+            span Администрирование
+          .dropdown-menu aria-labelledby="navbarAdminDropdown"
+            -# = link_to "Тесты (#{Game.count})", admin_games_path, class: 'dropdown-item'
+            = link_to "Пользователи (#{User.count})", admin_users_path, class: 'dropdown-item'
+
       li.nav-item.dropdown
         a id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class='nav-link dropdown-toggle' role='button' href='#'
           span.m-r-sm= ion_icon :person
           = current_user.email
         .dropdown-menu aria-labelledby="navbarDropdown"
-          = link_to "Мои тесты (#{current_user.games.count})", user_games_path, class: 'dropdown-item'
+          = link_to "Авторские квесты (#{current_user.bundles.count})", private_bundles_path, class: 'dropdown-item'
+          = link_to "Квести которые прохожу (#{current_user.bundle_games.count})", private_bundle_games_path, class: 'dropdown-item'
           = link_to 'Профиль', profile_path, class: 'dropdown-item'
           .dropdown-divider
           = link_to 'Выйти', logout_path, method: :delete, class: 'dropdown-item'

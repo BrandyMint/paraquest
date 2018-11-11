@@ -5,7 +5,7 @@ class User < ApplicationRecord
   mount_uploader :image, ProfileImageUploader
 
   has_many :bundles
-  has_many :games
+  has_many :bundle_games
 
   scope :ordered, -> { order :id }
 

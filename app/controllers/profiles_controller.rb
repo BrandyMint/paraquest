@@ -1,6 +1,4 @@
-class ProfilesController < ApplicationController
-  before_action :require_login
-
+class ProfilesController < Private::ApplicationController
   def edit
     render :show, locals: { user: current_user }
   end

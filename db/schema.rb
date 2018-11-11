@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_162204) do
+ActiveRecord::Schema.define(version: 2018_11_10_121240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bundle_games", force: :cascade do |t|
+    t.bigint "bundle_id", null: false
+    t.bigint "user_id", null: false
+    t.string "state", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bundle_id", "user_id"], name: "index_bundle_games_on_bundle_id_and_user_id", unique: true
+    t.index ["bundle_id"], name: "index_bundle_games_on_bundle_id"
+    t.index ["user_id"], name: "index_bundle_games_on_user_id"
+  end
 
   create_table "bundles", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -24,16 +35,19 @@ ActiveRecord::Schema.define(version: 2018_11_09_162204) do
     t.index ["user_id"], name: "index_bundles_on_user_id"
   end
 
-  create_table "games", force: :cascade do |t|
+  create_table "slide_games", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "slide_id", null: false
     t.decimal "x", null: false
     t.decimal "y", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slide_id", "user_id"], name: "index_games_on_slide_id_and_user_id", unique: true
-    t.index ["slide_id"], name: "index_games_on_slide_id"
-    t.index ["user_id"], name: "index_games_on_user_id"
+    t.string "state", null: false
+    t.bigint "bundle_game_id", null: false
+    t.index ["bundle_game_id", "slide_id"], name: "index_slide_games_on_bundle_game_id_and_slide_id", unique: true
+    t.index ["bundle_game_id"], name: "index_slide_games_on_bundle_game_id"
+    t.index ["slide_id"], name: "index_slide_games_on_slide_id"
+    t.index ["user_id"], name: "index_slide_games_on_user_id"
   end
 
   create_table "slides", force: :cascade do |t|
@@ -83,7 +97,9 @@ ActiveRecord::Schema.define(version: 2018_11_09_162204) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token"
   end
 
+  add_foreign_key "bundle_games", "bundles"
+  add_foreign_key "bundle_games", "users"
   add_foreign_key "bundles", "users"
-  add_foreign_key "games", "slides"
-  add_foreign_key "games", "users"
+  add_foreign_key "slide_games", "slides"
+  add_foreign_key "slide_games", "users"
 end

@@ -1,49 +1,80 @@
-             Prefix Verb   URI Pattern                         Controller#Action
-   user_games_index GET    /user_games/index(.:format)         user_games#index
-              login GET    /login(.:format)                    user_sessions#new
-             logout DELETE /logout(.:format)                   user_sessions#destroy
-      user_sessions POST   /user_sessions(.:format)            user_sessions#create
-   new_user_session GET    /user_sessions/new(.:format)        user_sessions#new
-       user_session DELETE /user_sessions/:id(.:format)        user_sessions#destroy
-    password_resets POST   /password_resets(.:format)          password_resets#create
- new_password_reset GET    /password_resets/new(.:format)      password_resets#new
-edit_password_reset GET    /password_resets/:id/edit(.:format) password_resets#edit
-     password_reset PATCH  /password_resets/:id(.:format)      password_resets#update
-                    PUT    /password_resets/:id(.:format)      password_resets#update
-             signup GET    /signup(.:format)                   users#new
-       edit_profile GET    /profile/edit(.:format)             profiles#edit
-            profile GET    /profile(.:format)                  profiles#show
-                    PATCH  /profile(.:format)                  profiles#update
-                    PUT    /profile(.:format)                  profiles#update
-      activate_user GET    /users/:id/activate(.:format)       users#activate
-              users POST   /users(.:format)                    users#create
-               user GET    /users/:id(.:format)                users#show
-                    POST   /password_resets(.:format)          password_resets#create
-                    GET    /password_resets/new(.:format)      password_resets#new
-                    GET    /password_resets/:id/edit(.:format) password_resets#edit
-                    PATCH  /password_resets/:id(.:format)      password_resets#update
-                    PUT    /password_resets/:id(.:format)      password_resets#update
-             slides GET    /slides(.:format)                   slides#index
-              slide GET    /slides/:id(.:format)               slides#show
-              games POST   /games(.:format)                    games#create
-           new_game GET    /games/new(.:format)                games#new
-         user_games GET    /user_games(.:format)               user_games#index
-               root GET    /                                   dashboard#index
-        admin_games GET    /admin/games(.:format)              admin/games#index
-         admin_game DELETE /admin/games/:id(.:format)          admin/games#destroy
-        admin_users GET    /admin/users(.:format)              admin/users#index
-                    POST   /admin/users(.:format)              admin/users#create
-     new_admin_user GET    /admin/users/new(.:format)          admin/users#new
-    edit_admin_user GET    /admin/users/:id/edit(.:format)     admin/users#edit
-         admin_user GET    /admin/users/:id(.:format)          admin/users#show
-                    PATCH  /admin/users/:id(.:format)          admin/users#update
-                    PUT    /admin/users/:id(.:format)          admin/users#update
-                    DELETE /admin/users/:id(.:format)          admin/users#destroy
-       admin_slides GET    /admin/slides(.:format)             admin/slides#index
-                    POST   /admin/slides(.:format)             admin/slides#create
-    new_admin_slide GET    /admin/slides/new(.:format)         admin/slides#new
-   edit_admin_slide GET    /admin/slides/:id/edit(.:format)    admin/slides#edit
-        admin_slide GET    /admin/slides/:id(.:format)         admin/slides#show
-                    PATCH  /admin/slides/:id(.:format)         admin/slides#update
-                    PUT    /admin/slides/:id(.:format)         admin/slides#update
-                    DELETE /admin/slides/:id(.:format)         admin/slides#destroy
+SIDEKIQ inline mode
+**************************************************
+⛔️ WARNING: Sidekiq testing API enabled, but this is not the test environment.  Your jobs will not go to Redis.
+**************************************************
+                   Prefix Verb   URI Pattern                                           Controller#Action
+                    login GET    /login(.:format)                                      user_sessions#new
+                   logout DELETE /logout(.:format)                                     user_sessions#destroy
+            user_sessions POST   /user_sessions(.:format)                              user_sessions#create
+         new_user_session GET    /user_sessions/new(.:format)                          user_sessions#new
+             user_session DELETE /user_sessions/:id(.:format)                          user_sessions#destroy
+          password_resets POST   /password_resets(.:format)                            password_resets#create
+       new_password_reset GET    /password_resets/new(.:format)                        password_resets#new
+      edit_password_reset GET    /password_resets/:id/edit(.:format)                   password_resets#edit
+           password_reset PATCH  /password_resets/:id(.:format)                        password_resets#update
+                          PUT    /password_resets/:id(.:format)                        password_resets#update
+                   signup GET    /signup(.:format)                                     users#new
+            activate_user GET    /users/:id/activate(.:format)                         users#activate
+                    users GET    /users(.:format)                                      users#index
+                          POST   /users(.:format)                                      users#create
+                     user GET    /users/:id(.:format)                                  users#show
+                          POST   /password_resets(.:format)                            password_resets#create
+                          GET    /password_resets/new(.:format)                        password_resets#new
+                          GET    /password_resets/:id/edit(.:format)                   password_resets#edit
+                          PATCH  /password_resets/:id(.:format)                        password_resets#update
+                          PUT    /password_resets/:id(.:format)                        password_resets#update
+                    slide GET    /slides/:id(.:format)                                 slides#show
+            bundle_slides GET    /bundles/:bundle_id/slides(.:format)                  slides#index
+                  bundles GET    /bundles(.:format)                                    bundles#index
+                   bundle GET    /bundles/:id(.:format)                                bundles#show
+                     root GET    /                                                     dashboard#index
+              slide_games POST   /slide_games(.:format)                                slide_games#create
+           new_slide_game GET    /slide_games/new(.:format)                            slide_games#new
+             edit_profile GET    /profile/edit(.:format)                               profiles#edit
+                  profile GET    /profile(.:format)                                    profiles#show
+                          PATCH  /profile(.:format)                                    profiles#update
+                          PUT    /profile(.:format)                                    profiles#update
+     private_bundle_games GET    /private/bundle_games(.:format)                       private/bundle_games#index
+                          POST   /private/bundle_games(.:format)                       private/bundle_games#create
+  new_private_bundle_game GET    /private/bundle_games/new(.:format)                   private/bundle_games#new
+ edit_private_bundle_game GET    /private/bundle_games/:id/edit(.:format)              private/bundle_games#edit
+      private_bundle_game GET    /private/bundle_games/:id(.:format)                   private/bundle_games#show
+                          PATCH  /private/bundle_games/:id(.:format)                   private/bundle_games#update
+                          PUT    /private/bundle_games/:id(.:format)                   private/bundle_games#update
+                          DELETE /private/bundle_games/:id(.:format)                   private/bundle_games#destroy
+    private_bundle_slides GET    /private/bundles/:bundle_id/slides(.:format)          private/slides#index
+                          POST   /private/bundles/:bundle_id/slides(.:format)          private/slides#create
+ new_private_bundle_slide GET    /private/bundles/:bundle_id/slides/new(.:format)      private/slides#new
+edit_private_bundle_slide GET    /private/bundles/:bundle_id/slides/:id/edit(.:format) private/slides#edit
+     private_bundle_slide GET    /private/bundles/:bundle_id/slides/:id(.:format)      private/slides#show
+                          PATCH  /private/bundles/:bundle_id/slides/:id(.:format)      private/slides#update
+                          PUT    /private/bundles/:bundle_id/slides/:id(.:format)      private/slides#update
+                          DELETE /private/bundles/:bundle_id/slides/:id(.:format)      private/slides#destroy
+          private_bundles GET    /private/bundles(.:format)                            private/bundles#index
+                          POST   /private/bundles(.:format)                            private/bundles#create
+       new_private_bundle GET    /private/bundles/new(.:format)                        private/bundles#new
+      edit_private_bundle GET    /private/bundles/:id/edit(.:format)                   private/bundles#edit
+           private_bundle GET    /private/bundles/:id(.:format)                        private/bundles#show
+                          PATCH  /private/bundles/:id(.:format)                        private/bundles#update
+                          PUT    /private/bundles/:id(.:format)                        private/bundles#update
+                          DELETE /private/bundles/:id(.:format)                        private/bundles#destroy
+              admin_games GET    /admin/games(.:format)                                admin/games#index
+               admin_game DELETE /admin/games/:id(.:format)                            admin/games#destroy
+              admin_users GET    /admin/users(.:format)                                admin/users#index
+                          POST   /admin/users(.:format)                                admin/users#create
+           new_admin_user GET    /admin/users/new(.:format)                            admin/users#new
+          edit_admin_user GET    /admin/users/:id/edit(.:format)                       admin/users#edit
+               admin_user GET    /admin/users/:id(.:format)                            admin/users#show
+                          PATCH  /admin/users/:id(.:format)                            admin/users#update
+                          PUT    /admin/users/:id(.:format)                            admin/users#update
+                          DELETE /admin/users/:id(.:format)                            admin/users#destroy
+        letter_opener_web        /letter_opener                                        LetterOpenerWeb::Engine
+              sidekiq_web        /sidekiq                                              Sidekiq::Web
+            sidekiq_stats GET    /sidekiq-stats(.:format)                              #<Proc:0x00005588b854fb78@/home/danil/code/paraquest/config/routes.rb:54>
+
+Routes for LetterOpenerWeb::Engine:
+clear_letters DELETE /clear(.:format)                 letter_opener_web/letters#clear
+delete_letter DELETE /:id(.:format)                   letter_opener_web/letters#destroy
+      letters GET    /                                letter_opener_web/letters#index
+       letter GET    /:id(/:style)(.:format)          letter_opener_web/letters#show
+              GET    /:id/attachments/:file(.:format) letter_opener_web/letters#attachment
