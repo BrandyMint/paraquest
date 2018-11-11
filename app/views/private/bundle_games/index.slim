@@ -1,0 +1,4 @@
+.row
+  - bundle_games.each do |bundle_game|
+    .col-md-2.m-b-md
+      = render 'bundles/card', bundle: bundle_game.bundle

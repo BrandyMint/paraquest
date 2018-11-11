@@ -26,6 +26,6 @@ class Private::BundleGamesController < Private::ApplicationController
   end
 
   def index
-    render locals: { games: current_user.games.order('id desc') }
+    render locals: { bundle_games: current_user.bundle_games.ordered }
   end
 end

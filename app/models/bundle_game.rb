@@ -8,6 +8,8 @@ class BundleGame < ApplicationRecord
   has_many :slides, through: :bundle
   has_many :slide_games, -> { ordered }
 
+  scope :ordered, -> { order :id }
+
   workflow_column :state
   workflow do
     state :draft do

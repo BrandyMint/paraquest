@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= app_title
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render 'header'
+    .container-fluid
+      .row
+        .col-md-2= render 'private/nav'
+        .col-md-10= yield
+    = render 'flashes'
+    
+    = render 'footer'
+
+    - if Rails.env.production?
+      = render 'metrika'
+      = render 'chat'
