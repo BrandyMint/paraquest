@@ -1,6 +1,6 @@
 class Private::BundlesController < Private::ApplicationController
   def index
-    render locals: { bundles: paginate(Bundle.ordered) }
+    render locals: { bundles: current_user.bundles }
   end
 
   def edit
@@ -16,7 +16,7 @@ class Private::BundlesController < Private::ApplicationController
   end
 
   def show
-    render locals: { bundle: bundle }
+    redirect_to edit_private_bundle_path bundle
   end
 
   def new

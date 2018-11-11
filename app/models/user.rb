@@ -4,8 +4,8 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   mount_uploader :image, ProfileImageUploader
 
-  has_many :bundles
-  has_many :bundle_games
+  has_many :bundles, -> { ordered }
+  has_many :bundle_games, -> { ordered }
   has_many :slide_games
 
   scope :ordered, -> { order :id }

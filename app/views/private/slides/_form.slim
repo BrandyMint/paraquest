@@ -3,6 +3,7 @@
   .row
     .col-md-6
       = f.input :image
+      = f.input :image_cache, as: :hidden
       = f.input :details
   hr
   = f.button :submit, 'Сохранить', class: 'btn btn-success'

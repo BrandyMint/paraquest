@@ -1,13 +1,12 @@
-h1 Слайды (#{slides.count})
+h2 Слайды (#{slides.count} шт.)
 
 table.table.table-condensed.table-narrow
   tbody
     - slides.each do |slide|
       tr
-        td= slide.id
         td
-          = link_to slide.image.url do
+          = link_to edit_private_slide_path slide do
             = image_tag slide.image.thumb.url
         td= raw slide.details
         td
-          = link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn'
+          = link_to 'Изменить', edit_private_slide_path(slide)
