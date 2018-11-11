@@ -19,8 +19,8 @@ header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.flex-column.flex-
           span.m-r-sm= ion_icon :person
           = current_user.email
         .dropdown-menu aria-labelledby="navbarDropdown"
+          = link_to "Прохожу квесты (#{current_user.bundle_games.count})", private_bundle_games_path, class: 'dropdown-item'
           = link_to "Авторские квесты (#{current_user.bundles.count})", private_bundles_path, class: 'dropdown-item'
-          = link_to "Квести которые прохожу (#{current_user.bundle_games.count})", private_bundle_games_path, class: 'dropdown-item'
           = link_to 'Профиль', profile_path, class: 'dropdown-item'
           .dropdown-divider
           = link_to 'Выйти', logout_path, method: :delete, class: 'dropdown-item'
