@@ -1,14 +1,14 @@
 .row
   .col-md-3
-    -# = link_to '&larr; назад в список слайдов'.html_safe, slides_path
+    = link_to "&larr; назад в квест #{slide.bundle}".html_safe, bundle_path(slide.bundle)
     h2.m-b-0= "Слайд #{slide}"
   .col-md-3
-    - if logged_in? && current_user.admin?
-      = link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn btn-outline'
+    /- if logged_in? && current_user.admin?
+      /= link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn btn-outline'
 
   .col-md-6
     .float-right
-      = render 'play_slide_button', slide: slide
+      -# = render 'play_slide_button', slide: slide
 hr
 
 .row

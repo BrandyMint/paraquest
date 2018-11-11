@@ -1,4 +1,4 @@
-- slide.games.each do |game|
+- slide.slide_games.with_done_state.each do |game|
   div(data-follower style=game.css_style data={x: game.coordinate.x, y: game.coordinate.y})
     - if logged_in? && game.user == current_user
       div(data-follower-circle1)

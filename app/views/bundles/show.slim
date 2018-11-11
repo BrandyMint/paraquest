@@ -1,0 +1,10 @@
+.row
+  .col-md-6
+    h1= "Квест #{bundle}"
+  .col-md-6
+    = render 'bundles/action_button', bundle: bundle
+hr
+.row
+  - bundle.slides.each do |slide|
+    .col-md-2.m-b-md
+      = render 'slides/card', slide: slide

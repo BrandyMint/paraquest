@@ -8,4 +8,4 @@
 
     -# - unless logged_in? && current_user.played_slide?(slide)
     hr
-    = link_to 'Пройти', new_private_bundle_game_path(bundle_id: bundle.id), class: 'btn btn-primary btn-sm'
+    = render 'bundles/action_button', bundle: bundle

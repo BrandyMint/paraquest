@@ -1,9 +1,9 @@
-- if slide.games.exists?
-  h3.m-t-0= "Уже прошли (#{slide.games.count} раз)"
+- if slide.slide_games.with_done_state.exists?
+  h3.m-t-0= "Уже прошли (#{slide.slide_games.with_done_state.count} раз)"
 
   table.table.table-sm.table-striped
     tbody
-      - slide.games.order('id desc').each do |game|
+      - slide.slide_games.with_done_state.ordered.each do |game|
         tr
           td
             = link_to user_path(game.user) do

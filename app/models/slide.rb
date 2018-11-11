@@ -4,7 +4,7 @@ class Slide < ApplicationRecord
   mount_uploader :image, SlideImageUploader
 
   belongs_to :bundle
-  has_many :games
+  has_many :slide_games
 
   scope :ordered, -> { order 'id desc' }
 

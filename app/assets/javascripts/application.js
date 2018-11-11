@@ -42,11 +42,11 @@ document.addEventListener("turbolinks:load", function() {
 
     $form = $('[data-game="form"]');
 
-    $form.find('input#game_current_slide_width').val(width);
-    $form.find('input#game_current_slide_height').val(height);
+    $form.find('input#slide_game_current_slide_width').val(width);
+    $form.find('input#slide_game_current_slide_height').val(height);
 
-    $form.find('input#game_click_top').val(y);
-    $form.find('input#game_click_left').val(x);
+    $form.find('input#slide_game_click_top').val(y);
+    $form.find('input#slide_game_click_left').val(x);
 
     $('[data-game="form"]').submit();
   });

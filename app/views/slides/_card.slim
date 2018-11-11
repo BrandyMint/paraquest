@@ -7,15 +7,15 @@
       .col
         .card-text= "##{slide.id}"
       .col
-        - if slide.games.any?
-          .float-right.badge.badge-success= slide.games.count
+        /- if slide.games.any?
+          /.float-right.badge.badge-success= slide.games.count
 
     .m-t-md
-      - if slide.games.any?
-        - if logged_in? && current_user.played_slide?(slide)
-          = link_to 'Результаты', slide_path(slide), class: 'btn btn-info btn-sm'
-      - unless logged_in? && current_user.played_slide?(slide)
-        = link_to 'Пройти', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-primary btn-sm'
+      /- if slide.games.any?
+        /- if logged_in? && current_user.played_slide?(slide)
+          /= link_to 'Результаты', slide_path(slide), class: 'btn btn-info btn-sm'
+      /- unless logged_in? && current_user.played_slide?(slide)
+        /= link_to 'Пройти', new_game_path(game: { slide_id: slide.id }), class: 'btn btn-primary btn-sm'
 
 
 /.media.m-b-md

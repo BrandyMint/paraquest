@@ -28,12 +28,12 @@ SIDEKIQ inline mode
                   bundles GET    /bundles(.:format)                                    bundles#index
                    bundle GET    /bundles/:id(.:format)                                bundles#show
                      root GET    /                                                     dashboard#index
-              slide_games POST   /slide_games(.:format)                                slide_games#create
-           new_slide_game GET    /slide_games/new(.:format)                            slide_games#new
              edit_profile GET    /profile/edit(.:format)                               profiles#edit
                   profile GET    /profile(.:format)                                    profiles#show
                           PATCH  /profile(.:format)                                    profiles#update
                           PUT    /profile(.:format)                                    profiles#update
+  done_private_slide_game PUT    /private/slide_games/:id/done(.:format)               private/slide_games#done
+       private_slide_game GET    /private/slide_games/:id(.:format)                    private/slide_games#show
      private_bundle_games GET    /private/bundle_games(.:format)                       private/bundle_games#index
                           POST   /private/bundle_games(.:format)                       private/bundle_games#create
   new_private_bundle_game GET    /private/bundle_games/new(.:format)                   private/bundle_games#new
@@ -70,7 +70,7 @@ edit_private_bundle_slide GET    /private/bundles/:bundle_id/slides/:id/edit(.:f
                           DELETE /admin/users/:id(.:format)                            admin/users#destroy
         letter_opener_web        /letter_opener                                        LetterOpenerWeb::Engine
               sidekiq_web        /sidekiq                                              Sidekiq::Web
-            sidekiq_stats GET    /sidekiq-stats(.:format)                              #<Proc:0x00005588b854fb78@/home/danil/code/paraquest/config/routes.rb:54>
+            sidekiq_stats GET    /sidekiq-stats(.:format)                              #<Proc:0x000055c096cb0c08@/home/danil/code/paraquest/config/routes.rb:58>
 
 Routes for LetterOpenerWeb::Engine:
 clear_letters DELETE /clear(.:format)                 letter_opener_web/letters#clear

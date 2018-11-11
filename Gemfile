@@ -47,6 +47,7 @@ gem 'letter_opener_web'
 gem 'workflow', github: 'geekq/workflow'
 gem 'settingslogic'
 gem 'ionicons-rails'
+gem 'font-awesome-rails'
 
 gem 'money'
 gem 'money-rails', '~> 1.12'

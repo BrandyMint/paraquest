@@ -10,6 +10,8 @@ class SlideGame < ApplicationRecord
   belongs_to :slide
   belongs_to :user
 
+  scope :ordered, -> { order :id }
+
   # TODO Вынести в JS
   before_validation do
     self.x = 100.0 * click_left.to_f / current_slide_width.to_f
@@ -24,8 +26,14 @@ class SlideGame < ApplicationRecord
 
   workflow_column :state
   workflow do
-    state :draft
+    state :draft do
+      event :done, transitions_to: :done
+    end
     state :done
+  end
+
+  def to_s
+    slide.to_s
   end
 
   def coordinate

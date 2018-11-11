@@ -3,17 +3,17 @@ hr
 
 -# https://codepen.io/tamm/pen/LIFam
 
-h1 Тестирование слайда (#{game.slide.id})
+h1 Тестирование слайда (#{slide_game})
 
-= form_for game, data: { game: :form } do |f|
+= form_for slide_game, method: :put, url: done_private_slide_game_path, data: { game: :form } do |f|
   = f.hidden_field :slide_id
   = f.hidden_field :current_slide_width
   = f.hidden_field :current_slide_height
   = f.hidden_field :click_top
   = f.hidden_field :click_left
 
-div.slide-wrapper data={width: game.slide.width, height: game.slide.height, slideWrapper: 'game'}
-  = image_tag game.slide.image.url, class: 'crosshair game-image', data: { game: :image }
+div.slide-wrapper data={width: slide_game.slide.width, height: slide_game.slide.height, slideWrapper: 'game'}
+  = image_tag slide_game.slide.image.url, class: 'crosshair game-image', data: { game: :image }
   div(data-follower="mouse")
       div(data-follower-circle1)
       div(data-follower-circle2)

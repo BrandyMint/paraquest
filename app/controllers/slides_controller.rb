@@ -1,6 +1,6 @@
 class SlidesController < ApplicationController
   def index
-    redirect_to root_path
+    redirect_to bundles_path
   end
 
   def show

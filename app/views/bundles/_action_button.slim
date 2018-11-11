@@ -1,0 +1,12 @@
+- if logged_in? 
+  - bundle_game = current_user.bundle_games.find_by(bundle_id: bundle.id)
+  - if bundle_game.present?
+    - if bundle_game.done?
+      p Квест пройден.
+      = link_to 'Посмотреть результаты', private_bundle_game_path(bundle_game)
+    - else
+      = link_to 'Квест начат. Продолжить', private_bundle_game_path(bundle_game), class: 'btn btn-success btn-sm'
+  - else
+    = link_to 'Пройти', new_private_bundle_game_path(bundle_id: bundle.id), class: 'btn btn-primary btn-sm'
+- else
+  = link_to 'Пройти', new_private_bundle_game_path(bundle_id: bundle.id), class: 'btn btn-primary btn-sm'

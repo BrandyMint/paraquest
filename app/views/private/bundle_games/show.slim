@@ -1,0 +1,10 @@
+.row
+  .col-md-3
+    h1 Квест #{bundle_game.bundle}
+  .col-md-6
+    = render 'progress', bundle_game: bundle_game
+hr
+.row
+  - bundle_game.slide_games.each do |slide_game|
+    .col-md-2.m-b-md
+      = render 'slide_games/card', slide_game: slide_game

@@ -1,0 +1,9 @@
+.card.shadow-sm
+  = image_tag slide_game.slide.image.thumb.url, class: 'card-img-top'
+  .card-body
+    h5.card-title= slide_game.slide
+    .card-text
+      - if slide_game.done?
+        .text-success= fa_icon :check, text: 'Завершен'
+      - else
+        = link_to 'Пройти', private_slide_game_path(slide_game), class: 'btn btn-sm btn-primary'

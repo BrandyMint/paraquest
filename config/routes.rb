@@ -29,10 +29,14 @@ Rails.application.routes.draw do
 
   # Private
   #
-  resources :slide_games, only: [:new, :create]
 
   resource :profile, only: %i[show edit update]
   namespace :private do
+    resources :slide_games, only: [:show] do
+      member do
+        put :done
+      end
+    end
     resources :bundle_games
     resources :bundles do
       resources :slides

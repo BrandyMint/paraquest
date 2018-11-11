@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :bundles
   has_many :bundle_games
+  has_many :slide_games
 
   scope :ordered, -> { order :id }
 
@@ -29,7 +30,7 @@ class User < ApplicationRecord
   end
 
   def played_slide? slide
-    games.where(slide: slide).exists?
+    slide_games.where(slide: slide).exists?
   end
 
   def to_s

@@ -11,4 +11,8 @@ class Bundle < ApplicationRecord
   def image
     (slides.first || Slide.new).image
   end
+
+  def to_s
+    ["##{id}",title].join ' '
+  end
 end
