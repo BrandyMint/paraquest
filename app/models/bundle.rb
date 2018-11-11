@@ -4,7 +4,7 @@ class Bundle < ApplicationRecord
   scope :ordered, -> { order 'id desc' }
   scope :published, -> { all }
 
-  has_many :slides, dependent: :destroy
+  has_many :slides, -> { ordered }, dependent: :destroy
 
   validates :title, presence: true, uniqueness: { scope: :user_id }
 

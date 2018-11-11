@@ -25,6 +25,7 @@ gem 'redis-namespace'
 gem 'redis-rails'
 # gem 'redlock'
 
+gem 'best_in_place'
 gem 'rack-cors'
 gem 'rack-request-id'
 gem 'rack-utf8_sanitizer'

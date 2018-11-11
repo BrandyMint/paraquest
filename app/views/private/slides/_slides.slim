@@ -1,6 +1,4 @@
-.float-right= link_to 'Новый слайд', new_admin_slide_path, class: 'btn btn-success'
-
-h1 Слайды (#{slides.total_count})
+h1 Слайды (#{slides.count})
 
 table.table.table-condensed.table-narrow
   tbody
@@ -13,5 +11,3 @@ table.table.table-condensed.table-narrow
         td= raw slide.details
         td
           = link_to 'Изменить', edit_admin_slide_path(slide), class: 'btn'
-
-= paginate slides

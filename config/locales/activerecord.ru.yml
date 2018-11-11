@@ -1,6 +1,13 @@
 ru:
   activerecord:
     errors:
+      messages:
+        record_invalid: 'Возникли ошибки: %{errors}'
+        restrict_dependent_destroy:
+          has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
+          has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+        blank: Не должен быть пустым
+        required: Обязателен
       models:
         user:
           attributes:
@@ -11,6 +18,8 @@ ru:
     models:
       user: Пользователь
     attributes:
+      bundle:
+        title: Название квеста
       slide:
         image: Изображение
         details: Описание

@@ -38,9 +38,8 @@ Rails.application.routes.draw do
       end
     end
     resources :bundle_games
-    resources :bundles do
-      resources :slides
-    end
+    resources :bundles
+    resources :slides
   end
 
   # Админка

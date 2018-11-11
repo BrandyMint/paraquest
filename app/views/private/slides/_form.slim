@@ -1,0 +1,8 @@
+= simple_form_for [:private, slide] do |f|
+  = f.input :bundle_id, as: :hidden
+  .row
+    .col-md-6
+      = f.input :image
+      = f.input :details
+  hr
+  = f.button :submit, 'Сохранить', class: 'btn btn-success'

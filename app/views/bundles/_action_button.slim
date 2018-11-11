@@ -1,6 +1,9 @@
 - if logged_in? 
   - bundle_game = current_user.bundle_games.find_by(bundle_id: bundle.id)
-  - if bundle_game.present?
+
+  - if bundle.user == current_user
+    = link_to 'Изменить', edit_private_bundle_path(bundle), class: 'btn btn-default'
+  - elsif bundle_game.present?
     - if bundle_game.done?
       p Квест пройден.
       = link_to 'Посмотреть результаты', private_bundle_game_path(bundle_game)

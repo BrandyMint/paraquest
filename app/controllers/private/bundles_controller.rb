@@ -24,7 +24,7 @@ class Private::BundlesController < Private::ApplicationController
   end
 
   def create
-    Bundle.create! permitted_params
+    current_user.bundles.create! permitted_params
     redirect_to private_bundles_path, notice: 'Создан квест'
   rescue ActiveRecord::RecordInvalid => e
     flash.now.alert = e.message
