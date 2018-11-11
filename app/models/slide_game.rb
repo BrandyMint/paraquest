@@ -32,6 +32,11 @@ class SlideGame < ApplicationRecord
     state :done
   end
 
+  def done
+    return unless bundle_game.slide_games.with_draft_state.where.not(id: id).empty?
+    bundle_game.done!
+  end
+
   def to_s
     slide.to_s
   end

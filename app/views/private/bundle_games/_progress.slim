@@ -2,6 +2,3 @@ p Прогресс (#{bundle_game.state})
 .progress
   .progress-bar.bg-success.progress-bar-striped aria-valuemax=bundle_game.slides_count aria-valuemin=0 aria-valuenow=bundle_game.done_slides_count role="progressbar" style="width: #{bundle_game.progress_percents}%"
     = bundle_game.progress_humanized
-
-- unless bundle_game.done?
-  .m-t-md= link_to 'Продолжить', private_slide_game_path(bundle_game.next_slide_game), class: 'btn btn-sm btn-primary'

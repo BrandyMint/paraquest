@@ -10,7 +10,9 @@ class BundleGame < ApplicationRecord
 
   workflow_column :state
   workflow do
-    state :process
+    state :draft do
+      event :done, transitions_to: :done
+    end
     state :done
   end
 

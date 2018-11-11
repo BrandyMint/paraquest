@@ -1,4 +1,9 @@
-= link_to '&larr; назад в игры'.html_safe, bundles_path
+.row
+  .col-md-3
+    = link_to "&larr; список всех слайдов квеста #{slide_game.bundle_game.bundle}".html_safe, private_bundle_game_path(slide_game.bundle_game)
+    h2.m-b-0= "Слайд #{slide_game}"
+  .col-md-6
+    = render 'private/bundle_games/progress', bundle_game: slide_game.bundle_game
 hr
 
 -# https://codepen.io/tamm/pen/LIFam
