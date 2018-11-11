@@ -16,7 +16,7 @@ class Private::BundlesController < Private::ApplicationController
   end
 
   def show
-    redirect_to edit_private_bundle_path bundle
+    render locals: { bundle: bundle }
   end
 
   def new

@@ -1,0 +1,6 @@
+ru:
+  bundle:
+    states:
+      draft: Черновик
+      published: Опубликован
+      privated: Приватный

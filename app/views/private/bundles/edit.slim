@@ -1,9 +1,4 @@
-= link_to '&larr; назад в список квестов'.html_safe, private_bundles_path
-h1 Квест #{bundle.to_s}
-
+= link_to '&larr; назад в квест'.html_safe, private_bundle_path(bundle)
 hr
-= link_to 'Загрузить новый слайд', new_private_slide_path(slide: { bundle_id: bundle.id }), class: 'btn btn-success'
-hr
-
-- if bundle.slides.any?
-  = render 'private/slides/slides', slides: bundle.slides
+h1 Изменяем настройки квеста
+= render 'form', bundle: bundle

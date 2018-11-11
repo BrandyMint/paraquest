@@ -1,0 +1,14 @@
+= link_to '&larr; назад в список квестов'.html_safe, private_bundles_path
+.row
+  .col-md-6
+    h1 Квест #{bundle.to_s}
+    = bundle_state_humanized bundle.state
+  .col-md-6
+    = link_to 'Изменить', edit_private_bundle_path(bundle), class: 'btn btn-default'
+
+hr
+= link_to 'Загрузить новый слайд', new_private_slide_path(slide: { bundle_id: bundle.id }), class: 'btn btn-success'
+hr
+
+- if bundle.slides.any?
+  = render 'private/slides/slides', slides: bundle.slides
