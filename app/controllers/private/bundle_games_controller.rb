@@ -17,7 +17,7 @@ class Private::BundleGamesController < Private::ApplicationController
       end
     end
 
-    redirect_to private_slide_games_path(bundle_game.next_slide_game)
+    redirect_to private_slide_game_path(bundle_game.next_slide_game)
   end
 
   def show

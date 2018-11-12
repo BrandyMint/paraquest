@@ -4,7 +4,10 @@
   .col-md-6
     = render 'progress', bundle_game: bundle_game
     - unless bundle_game.done?
-      .m-t-md= link_to 'Продолжить', private_slide_game_path(bundle_game.next_slide_game), class: 'btn btn-sm btn-primary'
+      - if bundle_game.next_slide_game.present?
+        .m-t-md= link_to 'Продолжить', private_slide_game_path(bundle_game.next_slide_game), class: 'btn btn-sm btn-primary'
+      - else
+        .text-danger Квест не завершен, но нет следующего слайда.
 hr
 .row
   - bundle_game.slide_games.each do |slide_game|
