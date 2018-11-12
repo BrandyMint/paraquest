@@ -1,9 +1,11 @@
 FOLLOWER_QUERY = '[data-follower="mouse"]'
 WRAPPER_QUERY = '[data-slideWrapper="game"]'
+IMAGE_QUERY = '[data-game="image"]'
 
 follower = undefined
 wrapper = undefined
 $wrapper = undefined
+$image = undefined
 
 positionElement = (event) =>
   unless follower && wrapper
@@ -20,13 +22,18 @@ positionElement = (event) =>
   left = $wrapper.width() if left > $wrapper.width()
   top = $wrapper.height() if top > $wrapper.height()
 
+  left = $image.width() if left > $image.width()
+  top = $image.height() if top > $image.height()
+
   follower.style.left = left + 'px'
   follower.style.top = top + 'px'
 
 setFollower = ->
   follower = document.querySelector FOLLOWER_QUERY
   wrapper = document.querySelector WRAPPER_QUERY
+  image = document.querySelector IMAGE_QUERY
   $wrapper = $ wrapper
+  $image = $ image
 
   if wrapper
     wrapper.onmousemove = (event) =>
