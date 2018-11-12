@@ -24,7 +24,4 @@ hr
   .col-md-3
     = render 'slide_games', slide: slide
 
-hr
-.row
-  .col-md-12
-    div= raw slide.details
+= render 'slides/details', details: slide.details
