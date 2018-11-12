@@ -3,7 +3,7 @@ class Private::SlideGamesController < Private::ApplicationController
     if slide_game.done?
       render :done, locals: { slide_game: slide_game }
     else
-      render :play, locals: { slide_game: slide_game }
+      render :play, locals: { slide_game: slide_game }, layout: 'application'
     end
   end
 
