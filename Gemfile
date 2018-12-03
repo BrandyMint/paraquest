@@ -74,11 +74,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'mini_racer', platforms: :ruby
 
-gem 'sidekiq-failures', github: 'mhfs/sidekiq-failures'
-gem 'sidekiq-status'
-gem 'sidekiq'
-gem 'sidekiq-cron'
-
 gem 'non-stupid-digest-assets'
 
 gem 'auto_logger', '~> 0.1.3'
