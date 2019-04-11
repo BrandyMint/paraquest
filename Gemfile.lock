@@ -137,15 +137,22 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    auto_logger (0.1.4)
+      activesupport
+      beautiful-log
     auto_strip_attributes (2.5.0)
       activerecord (>= 4.0)
     autoprefixer-rails (9.3.1)
       execjs
+    awesome_print (1.8.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.12)
+    beautiful-log (0.2.2)
+      awesome_print (~> 1.8.0)
+      colorize (~> 0.8.1)
     best_in_place (3.1.1)
       actionpack (>= 3.2)
       railties (>= 3.2)
@@ -603,6 +610,7 @@ PLATFORMS
 DEPENDENCIES
   active_link_to!
   authority!
+  auto_logger
   auto_strip_attributes
   best_in_place
   bootsnap (>= 1.1.0)

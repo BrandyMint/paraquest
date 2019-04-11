@@ -75,7 +75,7 @@ gem 'mini_racer', platforms: :ruby
 
 gem 'non-stupid-digest-assets'
 
-# gem 'auto_logger', '~> 0.1.3'
+gem 'auto_logger'
 gem 'dapi-archivable', '~> 0.1.2', require: 'archivable'
 
 gem 'semver2'
