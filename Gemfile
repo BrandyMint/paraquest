@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.5'
+ruby '2.6.2'
 
 source 'https://rails-assets.org' do
   # На случай есил в rail-assets снова отвалится https используем опасный вариант
@@ -30,7 +30,6 @@ gem 'rack-cors'
 gem 'rack-request-id'
 gem 'rack-utf8_sanitizer'
 gem 'rack-attack'
-gem 'rack-traffic-logger', github: 'BrandyMint/rack-traffic-logger', branch: 'develop'
 
 gem 'sidekiq-failures', github: 'mhfs/sidekiq-failures'
 gem 'sidekiq-status'
@@ -76,7 +75,7 @@ gem 'mini_racer', platforms: :ruby
 
 gem 'non-stupid-digest-assets'
 
-gem 'auto_logger', '~> 0.1.3'
+# gem 'auto_logger', '~> 0.1.3'
 gem 'dapi-archivable', '~> 0.1.2', require: 'archivable'
 
 gem 'semver2'
@@ -89,7 +88,6 @@ gem 'phone', github: 'BrandyMint/phone', branch: 'feature/russia'
 gem 'authority', github: 'BrandyMint/authority', branch: 'feature/included_abilities_counter'
 gem 'sorcery', github: 'alfagen/sorcery'
 
-gem 'best_in_place'
 gem 'friendly_id'
 gem 'counter_culture'
 
