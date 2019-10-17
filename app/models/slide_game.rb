@@ -26,7 +26,7 @@ class SlideGame < ApplicationRecord
   alias_attribute :left, :x
   alias_attribute :top, :y
 
-  before_save do
+  before_save unless: :draft? do
     raise "x or y can't be NaN SlideGame##{id}" if x.nan? || y.nan?
   end
 
