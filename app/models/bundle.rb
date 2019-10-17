@@ -1,3 +1,5 @@
+# Пакен слайдов (игра)
+#
 class Bundle < ApplicationRecord
   include Workflow
 

@@ -1,3 +1,5 @@
+# Запись о том как пользователь сыграл этот пакет (игру)
+#
 class BundleGame < ApplicationRecord
   include JustCreated
   include Workflow
