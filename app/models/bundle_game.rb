@@ -35,6 +35,7 @@ class BundleGame < ApplicationRecord
   end
 
   def progress_percents
+    return 0 if slides_count.zero?
     done_slides_count * 100 / slides_count
   end
 
