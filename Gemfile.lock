@@ -354,7 +354,7 @@ GEM
       actionmailer (>= 3.2)
       letter_opener (~> 1.0)
       railties (>= 3.2)
-    libv8 (6.7.288.46.1)
+    libv8 (7.3.492.27.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -375,8 +375,8 @@ GEM
     mini_magick (4.9.2)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
-    mini_racer (0.2.3)
-      libv8 (>= 6.3)
+    mini_racer (0.2.6)
+      libv8 (>= 6.9.411)
     minitest (5.11.3)
     monetize (1.9.0)
       money (~> 6.12)
@@ -717,7 +717,7 @@ DEPENDENCIES
   workflow!
 
 RUBY VERSION
-   ruby 2.6.2p47
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.2
