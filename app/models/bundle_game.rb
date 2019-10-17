@@ -1,4 +1,4 @@
-# Запись о том как пользователь сыграл этот пакет (игру)
+# Результат игры чувака user в пакет игр bundle
 #
 class BundleGame < ApplicationRecord
   include JustCreated

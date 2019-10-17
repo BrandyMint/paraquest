@@ -1,4 +1,4 @@
-# Запись о том как чувак сыграл этот слайд
+# Результат игры в этот слайд
 #
 class SlideGame < ApplicationRecord
   include Workflow
