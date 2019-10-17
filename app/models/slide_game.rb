@@ -45,7 +45,7 @@ class SlideGame < ApplicationRecord
 
   def coordinate
     Coordinate.
-      new(x: x, y: y).
+      new(x: x || 0, y: y || 0).
       freeze
   end
 
