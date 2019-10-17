@@ -26,6 +26,10 @@ class SlideGame < ApplicationRecord
   alias_attribute :left, :x
   alias_attribute :top, :y
 
+  before_save do
+    raise "x or y can't be NaN SlideGame##{id}" if x.nan? || y.nan?
+  end
+
   workflow_column :state
   workflow do
     state :draft do
@@ -45,7 +49,7 @@ class SlideGame < ApplicationRecord
 
   def coordinate
     Coordinate.
-      new(x: x || 0, y: y || 0).
+      new(x: x, y: y).
       freeze
   end
 
