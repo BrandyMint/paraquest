@@ -1,4 +1,9 @@
 module ApplicationHelper
+  def data_game_coordinate(game)
+    raise "Invalid coordinates for #{game.id}" unless game.valid_coordinates?
+    { x: game.coordinate.x, y: game.coordinate.y }
+  end
+
   def app_title
     # 'Paraquest bitcoin exchange markets'
     'Параквест'
