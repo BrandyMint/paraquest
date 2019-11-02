@@ -81,7 +81,7 @@ gem 'dapi-archivable', '~> 0.1.2', require: 'archivable'
 gem 'semver2'
 gem 'active_link_to', github: 'BrandyMint/active_link_to'
 gem 'bugsnag'
-gem 'bootstrap', '~> 4.1.2'
+gem 'bootstrap', '~> 4.3.1'
 gem 'breadcrumbs_on_rails'
 gem 'phone', github: 'BrandyMint/phone', branch: 'feature/russia'
 
