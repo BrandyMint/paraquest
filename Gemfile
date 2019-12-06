@@ -64,7 +64,7 @@ gem 'gon'
 gem 'rails', '~> 5.2.1'
 # Use mysql as the database for Active Record
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # gem 'sassc-rails'
